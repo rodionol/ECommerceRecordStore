@@ -1,5 +1,5 @@
 nav {
-    background-color: #4E2D4F;
+    background-color:#352543;
 }
 
 nav .container {
@@ -21,4 +21,9 @@ nav ul {
 
 nav ul li {
     margin-left: 24px;
+}
+
+.logo {
+    height: 28px;
+    width: 28px;
 }
