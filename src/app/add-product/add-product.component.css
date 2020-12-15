@@ -40,5 +40,21 @@ h1, h1{
     padding: 0 32px;
     border-radius: 32px;
     height: 40px;
+
+.error-field {
+    border: 1px solid red;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+button.clear-button {
+    float: right;
+    color: #63477C;
+    border: none;
+    background-color: white;
     cursor: pointer;
 }

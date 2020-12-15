@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -26,6 +26,7 @@ export class AddProductComponent implements OnInit {
     status:null 
   };
   public prodId: number;
+  @ViewChild('f', {static:true}) f:ElementRef;
 
   constructor(
     private http: HttpClient,
@@ -38,12 +39,16 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  clearForm() {
+    console.log('clear form');
+  }
+
   onSubmit(myForm: NgForm) {
     this.submitted = true;
     if (myForm.valid) {
       if (confirm('You are about to submit this entry.\n Are you sure?')) {
         this.productService.create(myForm.value);
-        this.msg = "";
+        this.msg = "Submission successful";
         this.submitted = false;
         myForm.reset();
       }

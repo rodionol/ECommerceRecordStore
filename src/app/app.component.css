@@ -1,5 +1,5 @@
 nav {
-    background-color:#352543;
+    background-color: #352543;
 }
 
 nav .container {
@@ -26,4 +26,17 @@ nav ul li {
 .logo {
     height: 28px;
     width: 28px;
+
+footer {
+    background-color: #192032;
+    color: #ffffff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 4px;
+}
+
+footer span {
+    margin-right: 48px;
 }
