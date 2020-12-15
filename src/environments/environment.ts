@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   // baseUrl: 'http://localhost:8080/products-ut-wo-db/rest'
   // baseUrl: 'http://localhost:8081/products-ut-wo-db/rest/'
-  baseUrl: 'http://ec2-18-189-3-205.us-east-2.compute.amazonaws.com:8080/products-ut-wo-db/rest/'
+  // baseUrl: 'http://ec2-18-189-3-205.us-east-2.compute.amazonaws.com:8080/products-ut-wo-db/rest/'
+  baseUrl: 'http://ec2-3-15-210-133.us-east-2.compute.amazonaws.com/products/rest'
 };
 
 /*

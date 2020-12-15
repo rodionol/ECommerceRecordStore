@@ -26,8 +26,8 @@ h1, h1{
 
 .container {
     background-color: white;
-    margin-top: 68px;
-    padding: 48px;
+    margin-top: 48px;
+    padding: 40px 48px;
     border-radius: 12px;
 }
 
@@ -58,4 +58,18 @@ button.clear-button {
     border: none;
     background-color: white;
     cursor: pointer;
+}
+
+.row div input {
+    border: none;
+    border-bottom: 1px solid #63477C;
+    border-radius: 0;
+    margin-bottom: 16px;
+}
+
+.row div select {
+    border: none;
+    border-bottom: 1px solid #63477C;
+    border-radius: 0;
+    margin-bottom: 16px;
 }
