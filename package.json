@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "bootstrap": "^4.1.3",
+    "highcharts": "^8.2.2",
+    "highcharts-angular": "^2.8.2",
     "jquery": "^3.4.1",
     "popper.js": "^1.14.3",
     "rxjs": "~6.4.0",
