@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // baseUrl: 'http://localhost:8080/products-ut-wo-db/rest'
+  // baseUrl: 'http://localhost:8081/products-ut-wo-db/rest/'
+  baseUrl: 'http://ec2-18-189-3-205.us-east-2.compute.amazonaws.com:8080/products-ut-wo-db/rest/'
 };
 
 /*
