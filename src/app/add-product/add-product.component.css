@@ -40,6 +40,7 @@ h1, h1{
     padding: 0 32px;
     border-radius: 32px;
     height: 40px;
+}
 
 .error-field {
     border: 1px solid red;
