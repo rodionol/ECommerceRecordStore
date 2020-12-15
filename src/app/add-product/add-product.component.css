@@ -2,3 +2,21 @@
     font-size: 12px;
     color: red;
 }
+
+.error-field {
+    border: 1px solid red;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+button.clear-button {
+    float: right;
+    color: #63477C;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
