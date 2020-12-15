@@ -1,5 +1,5 @@
 nav {
-    background-color: #4E2D4F;
+    background-color: #352543;
 }
 
 nav .container {
@@ -21,4 +21,18 @@ nav ul {
 
 nav ul li {
     margin-left: 24px;
+}
+
+footer {
+    background-color: #192032;
+    color: #ffffff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 4px;
+}
+
+footer span {
+    margin-right: 48px;
 }

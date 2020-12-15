@@ -34,14 +34,14 @@
 
 .row div button.primary {
     margin-right: 16px;
-    background-color: #4E2D4F;
+    background-color: #63477C;
     color: white;
-    border: 1px solid #4E2D4F;
+    border: 1px solid #63477C;
 }
 
 .row div button.secondary {
-    color: #4E2D4F;
-    border: 1px solid #4E2D4F;
+    color: #63477C;
+    border: 1px solid #63477C;
     background-color: white;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .table-striped thead {
-    background-color: #4E2D4F;
+    background-color: #352543;
     color: white;
 }
 
@@ -84,5 +84,5 @@
 
 .table-striped tbody tr:hover th {
     border-radius: 12px 0 0 12px;
-    border-left: 8px solid #4E2D4F;
+    border-left: 8px solid #352543;
 } */
