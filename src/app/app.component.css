@@ -23,6 +23,10 @@ nav ul li {
     margin-left: 24px;
 }
 
+.logo {
+    height: 28px;
+    width: 28px;
+
 footer {
     background-color: #192032;
     color: #ffffff;

@@ -19,15 +19,51 @@ export class SearchProductComponent implements OnInit {
   ngOnInit() {
   }
 
+  isValidField(field){
+    return field != null && field != "";
+  }
+
+  isInvalidField(field){
+    return field == null || field == "";
+  }
+
   search() {
-
-    this.productService.getProducts().subscribe((data:any) => {
-      console.log(data);
-      this.products = <Product[]>data;
-    }, (err:any) => {
-      console.log(err.error.status);
-    });
-
+    if (this.isValidField(this.productId) && this.isInvalidField(this.productDescriptionEnglish)) {
+      console.log("id works")
+      this.productService.getProductsID(this.productId).subscribe((data:any) => {
+        console.log(data);
+        this.products = <Product[]>data;
+      }, (err:any) => {
+        console.log(err.error.status);
+      });
+    }
+    else if (this.isInvalidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
+      console.log("description works")
+      this.productService.getProductsDescription(this.productDescriptionEnglish).subscribe((data:any) => {
+        console.log(data);
+        this.products = <Product[]>data;
+      }, (err:any) => {
+        console.log(err.error.status);
+      });
+    }
+    else if (this.isValidField(this.productDescriptionEnglish) && this.isValidField(this.productDescriptionEnglish)) {
+      console.log("both work")
+      this.productService.getProductIdDescription(this.productId, this.productDescriptionEnglish).subscribe((data:any) => {
+        console.log(data);
+        this.products = <Product[]>data;
+      }, (err:any) => {
+        console.log(err.error.status);
+      });
+    }
+    else {
+      console.log("ok")
+      this.productService.getProducts().subscribe((data:any) => {
+        console.log(data);
+        this.products = <Product[]>data;
+      }, (err:any) => {
+        console.log(err.error.status);
+      });
+    }
   }
 
   clear() {
