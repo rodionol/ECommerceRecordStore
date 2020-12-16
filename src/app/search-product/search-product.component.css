@@ -1,0 +1,92 @@
+h1, h1{
+    color: #352543;
+}
+
+.row div {
+    display: flex;
+    align-items: baseline;
+    margin-right: 32px;  
+}
+
+.row div label {
+    white-space: nowrap;
+    margin-right: 16px;
+    margin-bottom: 0;
+    align-self: flex-end;
+    color: #868686;
+}
+
+.row div input {
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+}
+
+.row div button {
+    padding: 0 32px;
+    border-radius: 32px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.row div button:focus {
+    border-radius: 32px;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.row div button.primary {
+    margin-right: 16px;
+    background-color: #63477C;
+    color: white;
+    border: 1px solid #63477C;
+}
+
+.row div button.secondary {
+    color: #63477C;
+    border: 1px solid #63477C;
+    background-color: white;
+}
+
+.table-striped {
+    margin-top: 48px;
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table-striped thead {
+    background-color: #352543;
+    color: white;
+}
+
+.table-striped thead th:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.table-striped thead th:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.table-striped tbody th {
+    font-weight: normal;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(0,0,0,.02);
+}
+
+.table-striped td, .table-striped th {
+    border-top: none;
+}
+
+/* .table-striped tbody tr th {
+    border-radius: 12px 0 0 12px;
+    border-left: 8px solid transparent;
+}
+
+.table-striped tbody tr:hover th {
+    border-radius: 12px 0 0 12px;
+    border-left: 8px solid #352543;
+} */
