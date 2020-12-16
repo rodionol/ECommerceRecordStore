@@ -98,9 +98,9 @@
                         <br/>
                         <div class="row">
                             <div class="col-lg-6">
-                                <button (click)="clearForm()" class="clear-button">Clear form</button>
-                                <button class="btn btn-primary" type="submit">Submit</button>
-                                <span class="message">{{msg}}</span>
+                                <button (click)="clearForm(f)" class="clear-button">Clear form</button>
+                                <button class="primary" type="submit">Submit</button>
+                                <span class="message" [ngClass]="{'error':(submitted)}">{{msg}}</span>
                             </div>
                         </div>
                     </div>

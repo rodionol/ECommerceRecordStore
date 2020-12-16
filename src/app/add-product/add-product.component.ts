@@ -39,8 +39,9 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  clearForm() {
-    console.log('clear form');
+  clearForm(myForm: NgForm) {
+    myForm.resetForm();
+    
   }
 
   onSubmit(myForm: NgForm) {
