@@ -1,0 +1,44 @@
+nav {
+    background-color: #352543;
+    z-index: 1;
+}
+
+nav .container {
+    justify-content: flex-start;
+}
+
+nav a {
+    color: white;
+}
+
+nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+nav ul {
+    flex-direction: row;
+}
+
+nav ul li {
+    margin-left: 24px;
+}
+
+.logo {
+    height: 32px;
+    width: 32px;
+}
+
+footer {
+    background-color: #192032;
+    color: #ffffff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 4px;
+}
+
+footer span {
+    margin-right: 48px;
+}
