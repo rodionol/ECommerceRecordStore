@@ -29,7 +29,6 @@ export class SearchProductComponent implements OnInit {
 
   search() {
     if (this.isValidField(this.productId) && this.isInvalidField(this.productDescriptionEnglish)) {
-      console.log("id works")
       this.productService.getProductsID(this.productId).subscribe((data:any) => {
         console.log(data);
         this.products = <Product[]>data;
@@ -38,7 +37,6 @@ export class SearchProductComponent implements OnInit {
       });
     }
     else if (this.isInvalidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
-      console.log("description works")
       this.productService.getProductsDescription(this.productDescriptionEnglish).subscribe((data:any) => {
         console.log(data);
         this.products = <Product[]>data;
@@ -47,7 +45,6 @@ export class SearchProductComponent implements OnInit {
       });
     }
     else if (this.isValidField(this.productDescriptionEnglish) && this.isValidField(this.productDescriptionEnglish)) {
-      console.log("both work")
       this.productService.getProductIdDescription(this.productId, this.productDescriptionEnglish).subscribe((data:any) => {
         console.log(data);
         this.products = <Product[]>data;
@@ -56,7 +53,6 @@ export class SearchProductComponent implements OnInit {
       });
     }
     else {
-      console.log("ok")
       this.productService.getProducts().subscribe((data:any) => {
         console.log(data);
         this.products = <Product[]>data;
