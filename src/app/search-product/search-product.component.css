@@ -43,6 +43,12 @@ h1, h1{
     border: 1px solid #63477C;
 }
 
+.row div button.primary:disabled {
+    background-color: gainsboro;
+    border: 1px solid #868686;
+    color: #868686;
+}
+
 .row div button.secondary {
     color: #63477C;
     border: 1px solid #63477C;
