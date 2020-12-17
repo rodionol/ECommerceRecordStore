@@ -49,10 +49,6 @@ h1, h1{
     height: 40px;
 }
 
-.error-field {
-    border: 1px solid red;
-}
-
 .flex {
     display: flex;
     justify-content: space-between;
@@ -99,6 +95,12 @@ button.clear-button {
     border-radius: 0;
     box-sizing: border-box;
 }
+
+.row div input.error-field,
+.row div select.error-field {
+    border-bottom: 1px solid red;
+}
+
 
 .row div select {
     border: none;

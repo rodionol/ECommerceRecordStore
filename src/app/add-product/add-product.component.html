@@ -10,57 +10,51 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <label>Product Description (English)</label>
-                                <input type="text" id="productDescriptionEnglish" name="productDescriptionEnglish" class="form-control" 
-                                        [ngClass]="{'error-field': (submitted && !productDescriptionEnglish.valid) ||(!productDescriptionEnglish.valid && productDescriptionEnglish.touched)}" 
+                                <input type="text" id="productDescriptionEnglish" name="productDescriptionEnglish" class="form-control"  
                                         [(ngModel)]="product.productDescriptionEnglish" class="form-control" required #productDescriptionEnglish="ngModel">
-                                <span class="help-block" *ngIf="(submitted && !productDescriptionEnglish.valid) ||(!productDescriptionEnglish.valid && productDescriptionEnglish.touched)">Product Description (English) is required</span>
+                                <span class="help-block" *ngIf="(submitted && !productDescriptionEnglish.valid && !clearBtnClicked) ||(!productDescriptionEnglish.valid && productDescriptionEnglish.touched && !clearBtnClicked)">Product Description (English) is required</span>
                             </div>
                             <div class="col-lg-6">
                                 <label>Production Description (French)</label>
-                                <input type="text" id="productDescriptionFrench" name="productDescriptionFrench" class="form-control" 
-                                        [ngClass]="{'error-field': (submitted && !productDescriptionFrench.valid) ||(!productDescriptionFrench.valid && productDescriptionFrench.touched)}" 
+                                <input type="text" id="productDescriptionFrench" name="productDescriptionFrench" class="form-control"  
                                         [(ngModel)]="product.productDescriptionFrench" required #productDescriptionFrench="ngModel">
-                                <span class="help-block" *ngIf="(submitted && !productDescriptionFrench.valid) || (!productDescriptionFrench.valid && productDescriptionFrench.touched)">Product Description (French) is required</span>
+                                <span class="help-block" *ngIf="(submitted && !productDescriptionFrench.valid && !clearBtnClicked) || (!productDescriptionFrench.valid && productDescriptionFrench.touched && !clearBtnClicked)">Product Description (French) is required</span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <label>Brand Name (English)</label>
-                                <input type="text" id="brandNameEnglish" name="brandNameEnglish" class="form-control" 
-                                        [ngClass]="{'error-field': (submitted && !brandNameEnglish.valid) ||(!brandNameEnglish.valid && brandNameEnglish.touched)}" 
+                                <input type="text" id="brandNameEnglish" name="brandNameEnglish" class="form-control"  
                                         [(ngModel)]="product.brandNameEnglish" required #brandNameEnglish="ngModel">
-                                <span class="help-block" *ngIf="(submitted && !brandNameEnglish.valid) || (!brandNameEnglish.valid && brandNameEnglish.touched)">Brand Name (English) is required</span>
+                                <span class="help-block" *ngIf="(submitted && !brandNameEnglish.valid && !clearBtnClicked) || (!brandNameEnglish.valid && brandNameEnglish.touched && !clearBtnClicked)">Brand Name (English) is required</span>
                             </div>
                             <div class="col-lg-6">
                                 <label>Brand Name (French)</label>
-                                <input type="text" id="brandNameFrench" name="brandNameFrench" class="form-control" 
-                                        [ngClass]="{'error-field': (submitted && !brandNameFrench.valid) ||(!brandNameFrench.valid && brandNameFrench.touched)}"    
+                                <input type="text" id="brandNameFrench" name="brandNameFrench" class="form-control"     
                                         [(ngModel)]="product.brandNameFrench" class="form-control" required #brandNameFrench="ngModel">
-                                <span class="help-block" *ngIf="(submitted && !brandNameFrench.valid) || (!brandNameFrench.valid && brandNameFrench.touched)">Brand Name (French) is required</span>
+                                <span class="help-block" *ngIf="(submitted && !brandNameFrench.valid && !clearBtnClicked) || (!brandNameFrench.valid && brandNameFrench.touched && !clearBtnClicked)">Brand Name (French) is required</span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <label>Target Market</label>
                                 <select id="targetMarket" name="targetMarket" 
-                                        [ngClass]="{'error-field': (submitted && !targetMarket.valid) ||(!targetMarket.valid && targetMarket.touched)}"
                                         [(ngModel)]="product.targetMarket" class="form-control" required #targetMarket="ngModel">
                                     <option value=""></option>
                                     <option value="Canada">Canada</option>
                                     <option value="US">US</option>
                                 </select>
-                                <span class="help-block" *ngIf="(submitted && !targetMarket.valid) || (!targetMarket.valid && targetMarket.touched)">Target Market is required</span>
+                                <span class="help-block" *ngIf="(submitted && !targetMarket.valid && !clearBtnClicked) || (!targetMarket.valid && targetMarket.touched && !clearBtnClicked)">Target Market is required</span>
                             </div>
                             <div class="col-lg-6">
                                 <label>Status</label>
                                 <select id="status" name="status" 
-                                        [ngClass]="{'error-field': (submitted && !status.valid) ||(!status.valid && status.touched)}"
                                         [(ngModel)]="product.status" class="form-control" required #status="ngModel">
                                     <option value=""></option>
                                     <option value="Active">Active</option>
                                     <option value="Draft">Draft</option>
                                 </select>
-                                <span class="help-block" *ngIf="(submitted && !status.valid) || (!status.valid && status.touched)">Status is required</span>
+                                <span class="help-block" *ngIf="(submitted && !status.valid && !clearBtnClicked) || (!status.valid && status.touched && !clearBtnClicked)">Status is required</span>
                             </div>
                         </div>
 
@@ -68,39 +62,38 @@
                             <div class="col-lg-6">
                                 <label>Product Type</label>
                                 <select id="productType" name="productType" 
-                                        [ngClass]="{'error-field': (submitted && !productType.valid) ||(!productType.valid && productType.touched)}"
                                         [(ngModel)]="product.productType" class="form-control" required #productType="ngModel">
                                     <option value=""></option>
                                     <option value="Pallet">Pallet</option>
                                     <option value="Case">Case</option>
                                     <option value="Consumer or Base">Consumer or Base</option>
                                 </select>
-                                <span class="help-block" *ngIf="(submitted && !productType.valid) || (!productType.valid && productType.touched)">Product Type is required</span>
+                                <span class="help-block" *ngIf="(submitted && !productType.valid && !clearBtnClicked) || (!productType.valid && productType.touched && !clearBtnClicked)">Product Type is required</span>
                             </div>
                             <div class="col-lg-6">
                                 <label>Product Image (url)</label>
                                 <input type="text" id="productImageUrl" name="productImageUrl" class="form-control" 
-                                        [ngClass]="{'error-field': (submitted && !productImageUrl.valid) ||(!productImageUrl.valid && productImageUrl.touched)}"
+
                                         [(ngModel)]="product.productImageUrl" class="form-control" required
                                         #productImageUrl="ngModel">
-                                <span class="help-block" *ngIf="(submitted && !productImageUrl.valid) || (!productImageUrl.valid && productImageUrl.touched)">Product Image (url) is required</span>
+                                <span class="help-block" *ngIf="(submitted && !productImageUrl.valid && !clearBtnClicked) || (!productImageUrl.valid && productImageUrl.touched  && !clearBtnClicked)">Product Image (url) is required</span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <label>Product Identification</label>
-                                <input type="text" id="additionalProductIdentification" name="additionalProductIdentification" class="form-control" 
-                                    [ngClass]="{'error-field': (submitted && !additionalProductIdentification.valid) ||(!additionalProductIdentification.valid && additionalProductIdentification.touched)}"    
+                                <input type="text" id="additionalProductIdentification" name="additionalProductIdentification" class="form-control"     
                                     [(ngModel)]="product.additionalProductIdentification"
                                     class="form-control" required #additionalProductIdentification="ngModel">
+                                    <span class="help-block" *ngIf="(submitted && !additionalProductIdentification.valid && !clearBtnClicked) || (!additionalProductIdentification.valid && additionalProductIdentification.touched  && !clearBtnClicked)">Product Identification is required</span>
                             </div>
                         </div>
                         <br/>
                         <div class="row">
                             <div class="col-lg-6">
-                                <button (click)="clearForm(f)" class="clear-button">Clear form</button>
+                                <button (click)="clearForm(f)" type="button" class="clear-button">Clear form</button>
                                 <button class="primary" type="submit">Submit</button>
-                                <span class="message" [ngClass]="{'error':(submitted)}">{{msg}}</span>
+                                <span class="message" [ngClass]="{'error':(submitted)}" *ngIf="!clearBtnClicked">{{msg}}</span>
                             </div>
                         </div>
                     </div>

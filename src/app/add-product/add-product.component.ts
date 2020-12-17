@@ -26,7 +26,7 @@ export class AddProductComponent implements OnInit {
     status:null 
   };
   public prodId: number;
-  @ViewChild('f', {static:true}) f:ElementRef;
+  clearBtnClicked: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -39,11 +39,14 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  clearForm() {
-    console.log('clear form');
+  clearForm(myForm: NgForm) {
+    this.clearBtnClicked = true;
+    myForm.resetForm();
+    this.msg = "Form is cleared.";
   }
 
   onSubmit(myForm: NgForm) {
+    this.clearBtnClicked = false;
     this.submitted = true;
     if (myForm.valid) {
       if (confirm('You are about to submit this entry.\n Are you sure?')) {
