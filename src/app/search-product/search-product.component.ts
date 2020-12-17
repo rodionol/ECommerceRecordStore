@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../model/product';
+import {MatProgressSpinnerModule} from '@angular/material';
 
 @Component({
   selector: 'app-search-product',
@@ -13,10 +14,12 @@ export class SearchProductComponent implements OnInit {
   message: string;
   // let result: Array<string>
   products: Product[];
+  isDisabled: boolean;
 
   constructor(private productService:ProductService) { }
 
   ngOnInit() {
+    this.isDisabled = false;
   }
 
   isValidField(field){
@@ -28,40 +31,45 @@ export class SearchProductComponent implements OnInit {
   }
 
   search() {
+    this.isDisabled = true; 
     if (this.isValidField(this.productId) && this.isInvalidField(this.productDescriptionEnglish)) {
-      console.log("id works")
       this.productService.getProductsID(this.productId).subscribe((data:any) => {
         console.log(data);
         this.products = <Product[]>data;
+        this.isDisabled = false; 
       }, (err:any) => {
         console.log(err.error.status);
+        this.isDisabled = false; 
       });
     }
     else if (this.isInvalidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
-      console.log("description works")
       this.productService.getProductsDescription(this.productDescriptionEnglish).subscribe((data:any) => {
         console.log(data);
         this.products = <Product[]>data;
+        this.isDisabled = false; 
       }, (err:any) => {
         console.log(err.error.status);
+        this.isDisabled = false; 
       });
     }
     else if (this.isValidField(this.productDescriptionEnglish) && this.isValidField(this.productDescriptionEnglish)) {
-      console.log("both work")
       this.productService.getProductIdDescription(this.productId, this.productDescriptionEnglish).subscribe((data:any) => {
         console.log(data);
         this.products = <Product[]>data;
+        this.isDisabled = false; 
       }, (err:any) => {
         console.log(err.error.status);
+        this.isDisabled = false; 
       });
     }
     else {
-      console.log("ok")
       this.productService.getProducts().subscribe((data:any) => {
         console.log(data);
         this.products = <Product[]>data;
+        this.isDisabled = false; 
       }, (err:any) => {
         console.log(err.error.status);
+        this.isDisabled = false; 
       });
     }
   }

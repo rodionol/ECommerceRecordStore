@@ -1,6 +1,7 @@
 nav {
     background-color: #352543;
     z-index: 1;
+    box-shadow: 0 6px 6px -6px ;
 }
 
 nav .container {

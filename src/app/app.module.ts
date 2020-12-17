@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HighchartsChartComponent } from 'highcharts-angular';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { HomeComponent } from './home/home.component';
     AddProductComponent,
     SearchProductComponent,
     HighchartsChartComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
