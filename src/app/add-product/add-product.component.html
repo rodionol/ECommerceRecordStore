@@ -9,13 +9,15 @@
                     <div id="user-data">
                         <div class="row">
                             <div class="col-lg-6">
-                                <label>Product Description (English)</label>
+                                <label for="productDescriptionEnglish">Product Description (English)</label>
                                 <input type="text" id="productDescriptionEnglish" name="productDescriptionEnglish" class="form-control"  
                                         [(ngModel)]="product.productDescriptionEnglish" class="form-control" required #productDescriptionEnglish="ngModel">
-                                <span class="help-block" *ngIf="(submitted && !productDescriptionEnglish.valid && !clearBtnClicked) ||(!productDescriptionEnglish.valid && productDescriptionEnglish.touched && !clearBtnClicked)">Product Description (English) is required</span>
+                                <span class="help-block" *ngIf="(submitted && !productDescriptionEnglish.valid && !clearBtnClicked) ||
+                                        (!productDescriptionEnglish.valid && productDescriptionEnglish.touched && !clearBtnClicked)">
+                                        Product Description (English) is required</span>
                             </div>
                             <div class="col-lg-6">
-                                <label>Production Description (French)</label>
+                                <label for="productDescriptionFrench">Production Description (French)</label>
                                 <input type="text" id="productDescriptionFrench" name="productDescriptionFrench" class="form-control"  
                                         [(ngModel)]="product.productDescriptionFrench" required #productDescriptionFrench="ngModel">
                                 <span class="help-block" *ngIf="(submitted && !productDescriptionFrench.valid && !clearBtnClicked) || (!productDescriptionFrench.valid && productDescriptionFrench.touched && !clearBtnClicked)">Product Description (French) is required</span>
@@ -23,13 +25,13 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-                                <label>Brand Name (English)</label>
+                                <label for="brandNameEnglish">Brand Name (English)</label>
                                 <input type="text" id="brandNameEnglish" name="brandNameEnglish" class="form-control"  
                                         [(ngModel)]="product.brandNameEnglish" required #brandNameEnglish="ngModel">
                                 <span class="help-block" *ngIf="(submitted && !brandNameEnglish.valid && !clearBtnClicked) || (!brandNameEnglish.valid && brandNameEnglish.touched && !clearBtnClicked)">Brand Name (English) is required</span>
                             </div>
                             <div class="col-lg-6">
-                                <label>Brand Name (French)</label>
+                                <label for="brandNameFrench">Brand Name (French)</label>
                                 <input type="text" id="brandNameFrench" name="brandNameFrench" class="form-control"     
                                         [(ngModel)]="product.brandNameFrench" class="form-control" required #brandNameFrench="ngModel">
                                 <span class="help-block" *ngIf="(submitted && !brandNameFrench.valid && !clearBtnClicked) || (!brandNameFrench.valid && brandNameFrench.touched && !clearBtnClicked)">Brand Name (French) is required</span>
@@ -37,7 +39,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-                                <label>Target Market</label>
+                                <label for="targetMarket">Target Market</label>
                                 <select id="targetMarket" name="targetMarket" 
                                         [(ngModel)]="product.targetMarket" class="form-control" required #targetMarket="ngModel">
                                     <option value=""></option>
@@ -47,7 +49,7 @@
                                 <span class="help-block" *ngIf="(submitted && !targetMarket.valid && !clearBtnClicked) || (!targetMarket.valid && targetMarket.touched && !clearBtnClicked)">Target Market is required</span>
                             </div>
                             <div class="col-lg-6">
-                                <label>Status</label>
+                                <label for="status">Status</label>
                                 <select id="status" name="status" 
                                         [(ngModel)]="product.status" class="form-control" required #status="ngModel">
                                     <option value=""></option>
@@ -60,7 +62,7 @@
 
                         <div class="row">
                             <div class="col-lg-6">
-                                <label>Product Type</label>
+                                <label for="productType">Product Type</label>
                                 <select id="productType" name="productType" 
                                         [(ngModel)]="product.productType" class="form-control" required #productType="ngModel">
                                     <option value=""></option>
@@ -71,9 +73,8 @@
                                 <span class="help-block" *ngIf="(submitted && !productType.valid && !clearBtnClicked) || (!productType.valid && productType.touched && !clearBtnClicked)">Product Type is required</span>
                             </div>
                             <div class="col-lg-6">
-                                <label>Product Image (url)</label>
+                                <label for="productImageUrl">Product Image (url)</label>
                                 <input type="text" id="productImageUrl" name="productImageUrl" class="form-control" 
-
                                         [(ngModel)]="product.productImageUrl" class="form-control" required
                                         #productImageUrl="ngModel">
                                 <span class="help-block" *ngIf="(submitted && !productImageUrl.valid && !clearBtnClicked) || (!productImageUrl.valid && productImageUrl.touched  && !clearBtnClicked)">Product Image (url) is required</span>
@@ -81,7 +82,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-                                <label>Product Identification</label>
+                                <label for="additionalProductIdentification">Product Identification</label>
                                 <input type="text" id="additionalProductIdentification" name="additionalProductIdentification" class="form-control"     
                                     [(ngModel)]="product.additionalProductIdentification"
                                     class="form-control" required #additionalProductIdentification="ngModel">
