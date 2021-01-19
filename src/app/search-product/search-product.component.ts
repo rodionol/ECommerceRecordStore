@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../model/product';
+import { PRODUCTS } from '../mock-products';
 import {MatProgressSpinnerModule} from '@angular/material';
 
 @Component({
@@ -13,8 +14,10 @@ export class SearchProductComponent implements OnInit {
   productDescriptionEnglish: string;
   message: string;
   // let result: Array<string>
-  products: Product[];
+  products: Product[] = [];
   isDisabled: boolean;
+  @ViewChild('productIdField', {static: false}) productIdField:ElementRef;
+  @ViewChild('productDescField', {static: false}) productDescField:ElementRef;
 
   constructor(private productService:ProductService) { }
 
@@ -26,41 +29,47 @@ export class SearchProductComponent implements OnInit {
     return field != null && field != "";
   }
 
-  isInvalidField(field){
-    return field == null || field == "";
-  }
-
   search() {
     this.isDisabled = true; 
-    if (this.isValidField(this.productId) && this.isInvalidField(this.productDescriptionEnglish)) {
-      this.productService.getProductsID(this.productId).subscribe((data:any) => {
+    console.log(this.isValidField(this.productId));
+    console.log(this.isValidField(this.productDescriptionEnglish)); 
+    
+    if (this.isValidField(this.productId) && !this.isValidField(this.productDescriptionEnglish)) {
+      console.log('id only');
+      this.productService.getProductById(this.productIdField.nativeElement.value).subscribe((data:Product) => {
         console.log(data);
-        this.products = <Product[]>data;
+        this.products = [];
+        this.products.push(data);
         this.isDisabled = false; 
       }, (err:any) => {
         console.log(err.error.status);
         this.isDisabled = false; 
       });
     }
-    else if (this.isInvalidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
-      this.productService.getProductsDescription(this.productDescriptionEnglish).subscribe((data:any) => {
+    else if (!this.isValidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
+      console.log('desc only');
+      this.productService.getProductByDescription(this.productDescriptionEnglish).subscribe((data:Product) => {
         console.log(data);
-        this.products = <Product[]>data;
-        this.isDisabled = false; 
-      }, (err:any) => {
-        console.log(err.error.status);
-        this.isDisabled = false; 
       });
+      // this.productService.getProductByDescription(this.productDescriptionEnglish).subscribe((data:any) => {
+      //   console.log(data);
+      //   this.products = <Product[]>data;
+      //   this.isDisabled = false; 
+      // }, (err:any) => {
+      //   console.log(err.error.status);
+      //   this.isDisabled = false; 
+      // });
     }
-    else if (this.isValidField(this.productDescriptionEnglish) && this.isValidField(this.productDescriptionEnglish)) {
-      this.productService.getProductIdDescription(this.productId, this.productDescriptionEnglish).subscribe((data:any) => {
-        console.log(data);
-        this.products = <Product[]>data;
-        this.isDisabled = false; 
-      }, (err:any) => {
-        console.log(err.error.status);
-        this.isDisabled = false; 
-      });
+    else if (this.isValidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
+      console.log('both ok');
+      // this.productService.getProductIdDescription(this.productId, this.productDescriptionEnglish).subscribe((data:any) => {
+      //   console.log(data);
+      //   this.products = PRODUCTS;
+      //   this.isDisabled = false; 
+      // }, (err:any) => {
+      //   console.log(err.error.status);
+      //   this.isDisabled = false; 
+      // });
     }
     else {
       this.productService.getProducts().subscribe((data:any) => {
