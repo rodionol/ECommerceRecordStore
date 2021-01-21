@@ -5,6 +5,7 @@ import { Product } from './model/product';
 import { PRODUCTS } from './mock-products';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Console } from 'console';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class ProductService {
   baseUrl: string = environment.baseUrl;
   private productsUrl = 'api/products';  // URL to web api
+  allProducts = PRODUCTS;
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -63,15 +65,25 @@ export class ProductService {
 
   /** GET product by description. Will 404 if id not found */
   public getProductByDescription(desc: string): Observable<Product> {
-    if (!desc.trim()) {
-      //console.log('return all products');
-    }
-    const url = `${this.productsUrl}/${desc}`;
-    console.log(url);
-    return this.httpClient.get<Product>(url).pipe(
-      tap(_ => console.log(`fetched product desc=${desc}`)),
-      catchError(this.handleError<Product>(`getProduct desc=${desc}`))
-    );
+    let foundProduct: Product;
+    // if (!desc.trim()) {
+    //   console.log('return all products');
+    // }
+    console.log(desc, '(search term)');
+    console.log(this.allProducts);
+    this.allProducts.forEach(product => {
+      if (desc.trim() == product.productDescriptionEnglish) {
+        console.log('product found:', product);
+        foundProduct = product;
+      }
+    });
+    const url = `${this.productsUrl}/${foundProduct.id}`;
+    console.log('URL:', url);
+    return this.httpClient.get<Product>(url);
+    // .pipe(
+    //   tap(_ => console.log(`fetched product desc=${desc}`)),
+    //   catchError(this.handleError<Product>(`getProduct desc=${desc}`))
+    // );
   }
 
   public getProductIdDescription(productId:string, productDescriptionEnglish: string) {

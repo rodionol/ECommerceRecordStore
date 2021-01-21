@@ -49,16 +49,16 @@ export class SearchProductComponent implements OnInit {
     else if (!this.isValidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
       console.log('desc only');
       this.productService.getProductByDescription(this.productDescriptionEnglish).subscribe((data:Product) => {
-        console.log(data);
+        console.log('DATA:', data);  
       });
-      // this.productService.getProductByDescription(this.productDescriptionEnglish).subscribe((data:any) => {
-      //   console.log(data);
-      //   this.products = <Product[]>data;
-      //   this.isDisabled = false; 
-      // }, (err:any) => {
-      //   console.log(err.error.status);
-      //   this.isDisabled = false; 
-      // });
+      this.productService.getProductByDescription(this.productDescriptionEnglish).subscribe((data:any) => {
+        console.log(data);
+        this.products = <Product[]>data;
+        this.isDisabled = false; 
+      }, (err:any) => {
+        console.log(err.error.status);
+        this.isDisabled = false; 
+      });
     }
     else if (this.isValidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
       console.log('both ok');
