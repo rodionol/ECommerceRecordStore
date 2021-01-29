@@ -1,0 +1,35 @@
+
+ul {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+	width: 1140px;
+    font-family: sans-serif;
+    margin-top: 60px;
+    justify-content: space-evenly;
+}
+
+ul li {
+    list-style: none;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:150px;
+    height: 150px;
+    margin: 0px;
+    background: black;
+}
+
+ul li:hover {
+    background: #34072E;
+}
+
+ul li a {
+    display:block;
+	padding:3px;
+    color: white;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 4px solid #BD53C7;
+}

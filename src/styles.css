@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     margin-bottom: 48px;
+    background-color: #101A27;
 }
 
 .page-heading {
@@ -9,3 +10,9 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h1, h1{
+    color: #34072E;;
+}
+
+
