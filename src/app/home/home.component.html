@@ -1,21 +1,45 @@
-<div class="background"></div>
-<div class="container-fluid">
+
+<div class="container-fluid banner">
   <img src="/assets/hero.png"  alt="Vie">
   <div class="some-text">
     <h1>Vie.</h1>
-    <h1>Discover the best sounds</h1><br>
+    <h1>Discover the best sounds</h1>
     <p>Explore our products ></p>
   </div>
 </div>
-<div class="container-fluid piechart-container">
+<div class="container-fluid recordplayer-container">
   <div class="vinyl-record" #recordplayer></div>
   <div class="play-buttons">
-    <button class="play" (click)="playPauseRandom()">Play / Pause</button>
+
+    <audio id="heartbeat" #audio src="../../assets/audio/LewisCapaldiSomeoneYouLoved.mp3" preload="auto">
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+
+    <h3>New Release</h3>
+    <ol>
+      <li>
+        <div class="music-card" (click)="playPauseRandom()">
+          <div class="flex-row">
+            1 Freaking Out (Remix)    <button class="play">Play / Pause</button>
+          </div>
+          <div class="track-progress flex-row">
+            <div class="total-track-duration">
+              <div class="percent-played" #percentplayed></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="music-card" (click)="playPauseRandom()">
+          2 I Don't Care (Part I)<button class="play">Play / Pause</button>
+        </div>
+      </li>
+      <li><div class="music-card" (click)="playPauseRandom()">3 I Don't Care (Part II)<button class="play">Play / Pause</button></div></li>
+      <li><div class="music-card" (click)="playPauseRandom()">4 Christmas Carols<button class="play">Play / Pause</button></div></li>
+      <li><div class="music-card" (click)="playPauseRandom()">5 I Don't Care<button class="play">Play / Pause</button></div></li>
+    </ol>
 
   </div>
-  <!-- <highcharts-chart
-  [Highcharts] = "highcharts" 
-  [options] = "chartOptions" 
-  style = "width: 100%; height: 375px; display: block; ">
-  </highcharts-chart> -->
 </div>
+
+
