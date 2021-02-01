@@ -1,10 +1,5 @@
 <div class="container">
     <div class="row">
-        <div class="page-heading">
-            <h1 class="h1">Search Our Inventory</h1>
-        </div>
-    </div>
-    <div class="row">
         <div>
             <label>Product ID:</label>
             <input type="text" name="productId" class="form-control"
@@ -20,6 +15,11 @@
             <button (click)="clear()" class="clear secondary">Clear</button>
         </div>
     </div>
+
+    <div class="row">
+        <music-category></music-category>
+    </div>
+
     <div class="row">
         <!-- <mat-spinner *ngIf="isDisabled" style="margin:0 auto;" mode="indeterminate"></mat-spinner> -->
         <!-- Begin result -->

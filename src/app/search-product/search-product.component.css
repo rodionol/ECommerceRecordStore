@@ -1,10 +1,11 @@
-h1, h1{
-    color: #352543;
+.container {
+    padding: 100px 0px;
 }
+
 
 .row div {
     display: flex;
-    align-items: baseline;
+    align-items: baseline center;
     margin-right: 32px;  
 }
 
@@ -18,19 +19,17 @@ h1, h1{
 
 .row div input {
     border: none;
-    border-bottom: 1px solid #63477C;
+    border-bottom: 1px solid#852C7D;
     border-radius: 0;
 }
 
 .row div button {
     padding: 0 32px;
-    border-radius: 32px;
     height: 40px;
     cursor: pointer;
 }
 
 .row div button:focus {
-    border-radius: 32px;
     border-color: #80bdff;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
@@ -38,9 +37,16 @@ h1, h1{
 
 .row div button.primary {
     margin-right: 16px;
-    background-color: #63477C;
+    background-color:#852C7D;
     color: white;
-    border: 1px solid #63477C;
+    border:#852C7D;
+}
+
+.row div button.primary:hover{
+    margin-right: 16px;
+    background-color:#BD53C7;
+    color: white;
+    border:#BD53C7;
 }
 
 .row div button.primary:disabled {
@@ -50,8 +56,14 @@ h1, h1{
 }
 
 .row div button.secondary {
-    color: #63477C;
-    border: 1px solid #63477C;
+    color:#852C7D;
+    border: 1px solid#852C7D;
+    background-color: white;
+}
+
+.row div button.secondary:hover {
+    color: #BD53C7;
+    border: 1px solid#BD53C7;
     background-color: white;
 }
 
