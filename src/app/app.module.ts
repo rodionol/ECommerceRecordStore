@@ -16,6 +16,7 @@ import {MatProgressSpinnerModule} from '@angular/material';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MusicCategoryComponent } from './music-category/music-category.component';
+import { MusicPlayerComponent } from './music-player/music-player.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MusicCategoryComponent } from './music-category/music-category.componen
     HighchartsChartComponent,
     FooterComponent,
     MusicCategoryComponent,
+    MusicPlayerComponent,
   ],
   imports: [
     BrowserModule,

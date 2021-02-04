@@ -7,7 +7,8 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild("recordplayer", {static:true}) recordplayer:ElementRef;
+
+
 
   constructor() {
    }
@@ -53,14 +54,5 @@ export class HomeComponent implements OnInit {
                  ]
      }]
   };
-  
-  playPauseRandom() {
-     if (!this.recordplayer.nativeElement.classList.contains("spinning")) {
-         this.recordplayer.nativeElement.classList.add("spinning");
-     } else {
-         this.recordplayer.nativeElement.classList.remove("spinning");
-     }
-     
-  }
 
 }

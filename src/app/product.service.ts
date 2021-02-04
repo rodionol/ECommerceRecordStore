@@ -5,7 +5,7 @@ import { Product } from './model/product';
 import { PRODUCTS } from './mock-products';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Console } from 'console';
+// import { Console } from 'console';
 
 @Injectable({
   providedIn: 'root'
