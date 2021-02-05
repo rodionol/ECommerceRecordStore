@@ -12,6 +12,19 @@
     padding: 16px;
 }
 
+.vinyl-record-title-container {}
+
+.current-record-title {
+    text-align: center;
+    color: #FFF;
+}
+
+.current-record-subtitle {
+    text-align: center;
+    color: #FFF;
+    margin-bottom: 40px;
+}
+
 .vinyl-record {
     background-image: url(../../assets/images/vinyl_record.png);
     background-repeat: no-repeat;
@@ -57,7 +70,7 @@ ol > li:before {
 	counter-increment:li; /* Increment the counter by 1 */
 	/* Position and style the number */
     position:absolute;
-    top: 10px;
+    top: 2px;
     left: 24px;
 	/* top:-2px;
 	left:-2em; */
@@ -71,7 +84,7 @@ ol > li:before {
 	padding:4px;
 	/* border-top:2px solid #666; */
 	color:#fff;
-	font-size: 1.5em;
+	font-size: 1.8em;
 	/* font-weight:bold; */
 	text-align:center;
 }
@@ -79,7 +92,7 @@ ol > li:before {
 .music-card {
     background-color: #070b11;
     color: white;
-    padding: 16px 24px;
+    padding: 16px 32px;
     min-width: 360px; 
 }
 
@@ -89,7 +102,7 @@ ol > li:before {
 
 .music-card .flex-row.track-progress {
     display: none;
-    margin-top: 8px;
+    margin-top: 16px;
 } 
 
 .music-card.active button {
@@ -97,25 +110,26 @@ ol > li:before {
     color: white;
     border: none;
     background-image: url(../../assets/icons/pause.svg);
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;  
-    float: right;
-    margin-left: 16px;    
-}
-
-.music-card.active button.play {
-    background-color: transparent;
-    color: white;
-    border: none;
-    background-image: url(../../assets/icons/play.svg);
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     background-size: contain;
     background-repeat: no-repeat;  
     float: right;
     margin-left: 16px;  
+    margin-top: 4px;  
+}
+
+.music-card.active button.play {
+    /* background-color: transparent;
+    color: white;
+    border: none; */
+    background-image: url(../../assets/icons/play.svg);
+    /* width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;  
+    float: right;
+    margin-left: 16px;   */
 }
 
 .music-card button,

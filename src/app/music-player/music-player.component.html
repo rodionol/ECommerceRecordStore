@@ -1,10 +1,15 @@
 <div class="container-fluid recordplayer-container">
-    <div class="vinyl-record" #recordplayer></div>
+    <div class="vinyl-record-title-container">
+        <h2 class="current-record-title">{{featuredRecords[activeTrack].title}}</h2>
+        <div class="current-record-subtitle">{{featuredRecords[activeTrack].band}}</div>
+        <div class="vinyl-record" #recordplayer></div>
+    </div>
+        
     <div class="play-buttons">
 
-  <audio id="heartbeat" #audio src="../../assets/audio/record0.mp3" preload="auto">
-    Your browser does not support the <code>audio</code> element.
-  </audio>
+    <audio id="heartbeat" #audio src="../../assets/audio/record0.mp3" preload="auto">
+        Your browser does not support the <code>audio</code> element.
+    </audio>
 
     <h3 class="recordplayer-title">New Release</h3>
     <ol #listofrecords>

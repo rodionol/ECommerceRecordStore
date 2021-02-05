@@ -7,6 +7,13 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class MusicPlayerComponent implements OnInit {
   
+  featuredRecords: Array<Object> = [
+    {title: 'Freaking Out (Remix)', band: 'Icy Volcano'},
+    {title: 'I dont care (part1)', band: 'some guy'},
+    {title: 'I dont care (part2)', band: 'some guy'},
+    {title: 'Christmas songs', band: 'Various artists'},
+    {title: 'I dont care', band: 'some guy '},
+];
   @ViewChild("recordplayer", {static:true}) recordplayer:ElementRef;
   @ViewChild("audio", {static: true}) audio:ElementRef;
   @ViewChild("percentplayed", {static:true}) percentplayed: ElementRef;
