@@ -6,70 +6,69 @@
     Your browser does not support the <code>audio</code> element.
   </audio>
 
-  <h3>New Release</h3>
-
-<ol #listofrecords>
-    <li>
-      <div class="music-card" [ngClass]="{'active': activeTrack == 0}" (click)="playRecord(0)">
-        <div class="flex-row">
-          1 Freaking Out (Remix)    <button class="play">Play / Pause</button>
+    <h3 class="recordplayer-title">New Release</h3>
+    <ol #listofrecords>
+        <li>
+        <div class="music-card" [ngClass]="{'active': activeTrack == 0}" (click)="playRecord(0)">
+            <div class="flex-row">
+                Freaking Out (Remix)    <button id="btn0" class="play"></button>
+            </div>
+            <div class="track-progress flex-row">
+            <div class="total-track-duration">
+                <div class="percent-played track-zero" #percentplayed></div>
+            </div>
+            </div>
         </div>
+        </li>
+        <li>
+        <div class="music-card" [ngClass]="{'active': activeTrack == 1}" (click)="playRecord(1)">
+            <div class="flex-row">
+                I Don't Care (Part I)<button id="btn1" class="play"></button>
+            </div>
         <div class="track-progress flex-row">
-          <div class="total-track-duration">
-            <div class="percent-played track-zero" #percentplayed></div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="music-card" [ngClass]="{'active': activeTrack == 1}" (click)="playRecord(1)">
-        <div class="flex-row">
-          2 I Don't Care (Part I)<button class="play">Play / Pause</button>
-        </div>
-      <div class="track-progress flex-row">
-        <div class="total-track-duration">
-          <div class="percent-played track-one"></div>
-        </div>
-      </div>
-    </div>
-    </li>
-    <li>
-      <div class="music-card" [ngClass]="{'active': activeTrack == 2}" (click)="playRecord(2)">
-        <div>
-          3 I Don't Care (Part II)<button class="play">Play / Pause</button>
-        </div>
-        <div class="track-progress flex-row">
-          <div class="total-track-duration">
+            <div class="total-track-duration">
             <div class="percent-played track-one"></div>
-          </div>
+            </div>
         </div>
-      </div>
-    </li>
-    <li>
-      <div class="music-card" [ngClass]="{'active': activeTrack == 3}" (click)="playRecord(3)">
-        <div>  
-          4 Christmas Carols<button class="play">Play / Pause</button>
         </div>
-        <div class="track-progress flex-row">
-          <div class="total-track-duration">
-            <div class="percent-played track-one"></div>
-          </div>
+        </li>
+        <li>
+        <div class="music-card" [ngClass]="{'active': activeTrack == 2}" (click)="playRecord(2)">
+            <div class="flex-row">
+                I Don't Care (Part II)<button id="btn2" class="play"></button>
+            </div>
+            <div class="track-progress flex-row">
+            <div class="total-track-duration">
+                <div class="percent-played track-one"></div>
+            </div>
+            </div>
         </div>
-      </div>
-    </li>
-    <li>
-      <div class="music-card" [ngClass]="{'active': activeTrack == 4}" (click)="playRecord(4)">
-        <div>
-          5 I Don't Care<button class="play">Play / Pause</button>
+        </li>
+        <li>
+        <div class="music-card" [ngClass]="{'active': activeTrack == 3}" (click)="playRecord(3)">
+            <div class="flex-row">  
+                Christmas Carols<button id="btn3" class="play"></button>
+            </div>
+            <div class="track-progress flex-row">
+            <div class="total-track-duration">
+                <div class="percent-played track-one"></div>
+            </div>
+            </div>
         </div>
-        <div class="track-progress flex-row">
-          <div class="total-track-duration">
-            <div class="percent-played track-one"></div>
-          </div>
+        </li>
+        <li>
+        <div class="music-card" [ngClass]="{'active': activeTrack == 4}" (click)="playRecord(4)">
+            <div class="flex-row">
+                I Don't Care<button id="btn4" class="play"></button>
+            </div>
+            <div class="track-progress flex-row">
+            <div class="total-track-duration">
+                <div class="percent-played track-one"></div>
+            </div>
+            </div>
         </div>
-      </div>
-    </li>
-  </ol>
+        </li>
+    </ol>
 
   </div>
 
