@@ -15,4 +15,14 @@ h1, h1{
     color: #34072E;;
 }
 
+a, button {
+    &:focus {
+        outline: none;
+        border: 0;
+        border-radius: 4px;
+        box-shadow: 0 0 0.6rem 0.1rem #bd53c7; //#52627c;
+        pointer-events: none;
+    }
+}
+
 

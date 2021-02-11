@@ -14,7 +14,7 @@
     <h3 class="recordplayer-title">New Release</h3>
     <ol #listofrecords>
         <li>
-        <div class="music-card" [ngClass]="{'active': activeTrack == 0}" (click)="playRecord(0)">
+        <div tabindex="-1" class="music-card" [ngClass]="{'active': activeTrack == 0}" (click)="playRecord(0)">
             <div class="flex-row">
                 Freaking Out (Remix)    <button id="btn0" class="play"></button>
             </div>
@@ -26,7 +26,7 @@
         </div>
         </li>
         <li>
-        <div class="music-card" [ngClass]="{'active': activeTrack == 1}" (click)="playRecord(1)">
+        <div tabindex="-1" class="music-card" [ngClass]="{'active': activeTrack == 1}" (click)="playRecord(1)">
             <div class="flex-row">
                 I Don't Care (Part I)<button id="btn1" class="play"></button>
             </div>
@@ -38,7 +38,7 @@
         </div>
         </li>
         <li>
-        <div class="music-card" [ngClass]="{'active': activeTrack == 2}" (click)="playRecord(2)">
+        <div tabindex="-1" class="music-card" [ngClass]="{'active': activeTrack == 2}" (click)="playRecord(2)">
             <div class="flex-row">
                 I Don't Care (Part II)<button id="btn2" class="play"></button>
             </div>
@@ -50,7 +50,7 @@
         </div>
         </li>
         <li>
-        <div class="music-card" [ngClass]="{'active': activeTrack == 3}" (click)="playRecord(3)">
+        <div tabindex="-1" class="music-card" [ngClass]="{'active': activeTrack == 3}" (click)="playRecord(3)">
             <div class="flex-row">  
                 Christmas Carols<button id="btn3" class="play"></button>
             </div>
@@ -75,6 +75,6 @@
         </li>
     </ol>
 
-  </div>
+    </div>
 
 </div>
