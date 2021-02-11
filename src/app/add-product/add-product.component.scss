@@ -76,12 +76,14 @@ h1, h1{
     border: 1px solid #63477C;
 }
 
-button.clear-button {
-    float: right;
-    color: #63477C;
-    border: none;
-    background-color: white;
-    cursor: pointer;
+button {
+    &.clear-button {
+        float: right;
+        color: #63477C;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+    }
 }
 
 .row div label {
