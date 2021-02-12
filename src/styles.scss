@@ -15,7 +15,7 @@ h1, h1{
     color: #34072E;;
 }
 
-a, button {
+a, button, input, form .form-control {
     &:focus {
         outline: none;
         border: 0;
