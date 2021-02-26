@@ -7,7 +7,7 @@ import {MatProgressSpinnerModule} from '@angular/material';
 @Component({
   selector: 'app-search-product',
   templateUrl: './search-product.component.html',
-  styleUrls: ['./search-product.component.css']
+  styleUrls: ['./search-product.component.scss']
 })
 export class SearchProductComponent implements OnInit {
   productId: string;

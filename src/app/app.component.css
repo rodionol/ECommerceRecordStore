@@ -31,8 +31,10 @@ nav ul li {
 }
 
 .main-content {
-    margin-top: 60px;
+    padding-top: 60px;
     box-sizing: border-box;
+    padding-bottom: 56px;
+    background: linear-gradient(167deg, rgba(59,59,93,1) 0%, rgba(16,26,39,1) 100%);
 }
 
 footer {
