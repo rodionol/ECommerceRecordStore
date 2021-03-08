@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm" *ngFor="let tile of tiles">
+            <img src="{{tile.productImageUrl}}"/>
+            <div>{{tile.artist}}</div>
+            <div>{{tile.year}}</div>
+            <div>{{tile.price}}</div>
+            <br style="margin-bottom: 40px;"/>
+        </div>
+    </div>
+  </div>

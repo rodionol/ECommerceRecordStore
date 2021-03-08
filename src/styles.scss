@@ -2,6 +2,7 @@
 body {
     margin-bottom: 48px;
     background-color: #101A27;
+    color: #ffffff;
 }
 
 .page-heading {
@@ -12,7 +13,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 h1, h1{
-    color: #34072E;;
+    color: #34072E;
 }
 
 a, button, input, form input.form-control{
@@ -23,6 +24,10 @@ a, button, input, form input.form-control{
         box-shadow: 0 0 0.6rem 0.1rem #bd53c7 !important;
         pointer-events: none;
     }
+}
+
+div {
+    color: white;
 }
 
 
