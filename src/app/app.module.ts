@@ -18,6 +18,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { MusicCategoryComponent } from './music-category/music-category.component';
 import { MusicPlayerComponent } from './music-player/music-player.component';
 import { TileComponent } from './tile/tile.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TileComponent } from './tile/tile.component';
     MusicCategoryComponent,
     MusicPlayerComponent,
     TileComponent,
+    PaginatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { TileComponent } from './tile/tile.component';
       InMemoryDataService, { dataEncapsulation: false }
     ),
     BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

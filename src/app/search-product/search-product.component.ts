@@ -1,14 +1,16 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, NgModule, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../model/product';
 import { PRODUCTS } from '../mock-products';
-import {MatProgressSpinnerModule} from '@angular/material';
+// import {MatProgressSpinnerModule} from '@angular/material';
 
 @Component({
   selector: 'app-search-product',
   templateUrl: './search-product.component.html',
   styleUrls: ['./search-product.component.scss']
 })
+
+
 export class SearchProductComponent implements OnInit {
   productId: string;
   productDescriptionEnglish: string;
