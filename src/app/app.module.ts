@@ -17,6 +17,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MusicCategoryComponent } from './music-category/music-category.component';
 import { MusicPlayerComponent } from './music-player/music-player.component';
+import { TileComponent } from './tile/tile.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { MusicPlayerComponent } from './music-player/music-player.component';
     FooterComponent,
     MusicCategoryComponent,
     MusicPlayerComponent,
+    TileComponent,
+    PaginatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,7 @@ import { MusicPlayerComponent } from './music-player/music-player.component';
       InMemoryDataService, { dataEncapsulation: false }
     ),
     BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
