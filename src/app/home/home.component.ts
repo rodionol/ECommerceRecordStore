@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  
   constructor() {
    }
 
@@ -21,10 +20,18 @@ export class HomeComponent implements OnInit {
         plotShadow: false,
         backgroundColor:null
      },
+     legend: {
+      itemStyle: {
+          color: 'white',
+          fontWeight: 'bold',
+          fontSize: '20px'
+      }
+  },
      title : {
         text: 'Available Products' ,
         style: {
-           color: '#FFFFFF'
+           color: '#FFFFFF',
+      
         }
           
      },
@@ -33,7 +40,7 @@ export class HomeComponent implements OnInit {
            allowPointSelect: true,
            cursor: 'pointer',
            colors: [
-              '#000000',
+              '#C3CEDB ',
               '#FFFFFF'
            ],
            dataLabels: {
@@ -55,4 +62,3 @@ export class HomeComponent implements OnInit {
   };
   
   }
-

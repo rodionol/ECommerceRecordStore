@@ -1,39 +1,39 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
-import { Product } from './model/product';
+import { Injectable } from '@angular/core'; 
+import { Product } from './model/product'
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  baseUrl: string = environment.baseUrl;
+  
+  products: Product[];
+    
 
-  constructor(private httpClient: HttpClient) { }
+  constructor( private http:HttpClient) { }
 
-  public getProducts() {
-    return this.httpClient.get(`${this.baseUrl+'products'}`);
+  onGetProducts(){
+    return this.http.get<Product[]>('http://localhost:3000/products');
   }
 
-  public getProductsID(productId: string) {
-    return this.httpClient.get(`${this.baseUrl+'product/'+ productId}`);
+  onGetProduct(id:number){
+   return this.http.get<Product>('http://localhost:3000/products/'+id);
+   
   }
 
-  public getProductsDescription(productDescriptionEnglish: string) {
-    return this.httpClient.get(`${this.baseUrl+'product/productDescriptionEnglish/' + productDescriptionEnglish}`);
+  onUpdateProduct(product:Product){
+    return this.http.put('http://localhost:3000/products/'+product.id, product)
   }
 
-  public getProductIdDescription(productId:string, productDescriptionEnglish: string) {
-    return this.httpClient.get(`${this.baseUrl+'product/'+ productId + '/productIdAndProductDescriptionEnglish/' + productDescriptionEnglish}`);
-  }
-
-  create(product: Product) {
-    //http://localhost:8080/products-ut-wo-db/rest/product/create
-    this.httpClient.post<Product>(`${this.baseUrl}product/create`, product).subscribe(data => {
-      console.log(data);
-    },
-    error =>
-      console.log('Could not create product.'));
+  createProduct(product:Product){
+    return this.http.post('http://localhost:3000/products',product);
     }
+
+  onDeleteProduct(product){
+   return this.http.delete('http://localhost:3000/products/'+ product.id);
+}
+
 
 }

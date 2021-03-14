@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../model/product';
+import { Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-search-product',
@@ -8,66 +10,44 @@ import { Product } from '../model/product';
   styleUrls: ['./search-product.component.css']
 })
 export class SearchProductComponent implements OnInit {
-  productId: string;
-  productDescriptionEnglish: string;
-  message: string;
-  // let result: Array<string>
-  products: Product[];
 
-  constructor(private productService:ProductService) { }
+  products:Product[];
+  title:string;
+  
+  constructor(private productService:ProductService,
+              private router:Router) { }
 
   ngOnInit() {
+    this.productService.onGetProducts().subscribe(res =>{
+      this.products = res;
+    });
   }
 
-  isValidField(field){
-    return field != null && field != "";
+  getLatestProducts(){
+    
   }
 
-  isInvalidField(field){
-    return field == null || field == "";
+  
+
+   deleteProduct(product){
+     this.productService.onDeleteProduct(product).subscribe(res =>{
+      // this.getLatestProducts();
+      this.ngOnInit();
+     });
+   }
+
+   search(){
+     if(this.title ===""){
+       this.ngOnInit();
+     } else {
+     this.products = this.products.filter(x => {
+      return x.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase());
+    })
+  }
   }
 
-  search() {
-    if (this.isValidField(this.productId) && this.isInvalidField(this.productDescriptionEnglish)) {
-      console.log("id works")
-      this.productService.getProductsID(this.productId).subscribe((data:any) => {
-        console.log(data);
-        this.products = <Product[]>data;
-      }, (err:any) => {
-        console.log(err.error.status);
-      });
-    }
-    else if (this.isInvalidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
-      console.log("description works")
-      this.productService.getProductsDescription(this.productDescriptionEnglish).subscribe((data:any) => {
-        console.log(data);
-        this.products = <Product[]>data;
-      }, (err:any) => {
-        console.log(err.error.status);
-      });
-    }
-    else if (this.isValidField(this.productDescriptionEnglish) && this.isValidField(this.productDescriptionEnglish)) {
-      console.log("both work")
-      this.productService.getProductIdDescription(this.productId, this.productDescriptionEnglish).subscribe((data:any) => {
-        console.log(data);
-        this.products = <Product[]>data;
-      }, (err:any) => {
-        console.log(err.error.status);
-      });
-    }
-    else {
-      console.log("ok")
-      this.productService.getProducts().subscribe((data:any) => {
-        console.log(data);
-        this.products = <Product[]>data;
-      }, (err:any) => {
-        console.log(err.error.status);
-      });
-    }
+  clear(){
+    this.title = "";
   }
-
-  clear() {
-    this.products = null;
-  }
-
 }
+

@@ -1,9 +1,10 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../model/product';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-product',
@@ -11,23 +12,18 @@ import { Product } from '../model/product';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-  public msg: string;
-  public submitted: boolean = false;
-  public product : Product = {
-    id:null,
-    productDescriptionEnglish:null,
-    productDescriptionFrench:null,
-    brandNameEnglish:null,
-    brandNameFrench:null,
-    productType:null,
-    additionalProductIdentification:null,
-    targetMarket:null,
-    productImageUrl:null,
-    status:null 
-  };
-  public prodId: number;
-  @ViewChild('f', {static:true}) f:ElementRef;
-
+   id:number;
+   isEdit:boolean = false;
+   msg:string;
+   product:Product = {
+     id:null,
+     title:"",
+     artist:"",
+     sellingPrice:null,
+     yearReleased:null,
+     genre:""
+   }
+  
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -36,26 +32,43 @@ export class AddProductComponent implements OnInit {
 
   ) { }
 
-  ngOnInit() {
-  }
-
-  clearForm() {
-    console.log('clear form');
-  }
+  ngOnInit():void {
+    this.id = +this.route.snapshot.paramMap.get('id');
+    if(this.id){
+      this.isEdit=true;
+     this.productService.onGetProduct(this.id).subscribe(res =>{
+       this.product = res;
+     });
+      
+    }
+    }
+   
+  
+ getLatestProducts(){
+   this.productService.onGetProducts().subscribe;
+      
+ }
+  
 
   onSubmit(myForm: NgForm) {
-    this.submitted = true;
-    if (myForm.valid) {
-      if (confirm('You are about to submit this entry.\n Are you sure?')) {
-        this.productService.create(myForm.value);
-        this.msg = "Submission successful";
-        this.submitted = false;
-        myForm.reset();
-      }
-    } else {
-      this.msg = "Entry is not completed.";
-    }
-
+    let product: Product = myForm.value;
+    this.productService.createProduct(product).subscribe(res => {
+      this.getLatestProducts();
+      myForm.form.reset();
+      console.log("Product added");
+      this.msg = "You Added A Product!!"
+    });
   }
-
+   
+    editProduct(myForm:NgForm) {
+      console.log('edit a product');
+      
+      this.productService.onUpdateProduct(this.product).subscribe(()=>{
+        this.getLatestProducts();
+         console.log("Product is updated!!");
+         this.isEdit=false;
+          myForm.form.reset();
+          this.msg = "You Updated A Product"
+      });
+    }
 }

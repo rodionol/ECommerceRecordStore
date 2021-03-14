@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "abc",
+      "artist": "Arijit singh",
+      "sellingPrice": 150,
+      "yearReleased": 2014,
+      "genre": "classical"
+    },
+    {
+      "id": "2",
+      "title": "efg",
+      "artist": "sonu ",
+      "sellingPrice": 250,
+      "yearReleased": "2016",
+      "genre": "classical"
+    },
+    {
+      "id": "3",
+      "title": "mno",
+      "artist": "salman",
+      "sellingPrice": 25,
+      "yearReleased": "2013",
+      "genre": "bollywood"
+    },
+    {
+      "id": "5",
+      "title": "jkl",
+      "artist": "udit narayan",
+      "sellingPrice": 250,
+      "yearReleased": "2011",
+      "genre": "classical"
+    },
+    {
+      "id": "7",
+      "title": "beautiful",
+      "artist": "akon",
+      "sellingPrice": 60,
+      "yearReleased": "2011",
+      "genre": "pop"
+    }
+  ]
+}
