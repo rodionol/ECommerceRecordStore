@@ -1,0 +1,30 @@
+.container-fluid {
+  padding: 0px; 
+  margin: 0px;
+}
+
+body {
+  background-color: #352543;
+}
+
+img {
+  height:100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.some-text {
+position:absolute;
+top:180px;
+bottom:100px;
+right:200px;
+color:white;
+
+}
+
+.piechart-container{
+ padding:56px 0px;
+ background: rgb(59,59,93);
+ background: linear-gradient(167deg, rgba(59,59,93,1) 0%, rgba(16,26,39,1) 100%); 
+}

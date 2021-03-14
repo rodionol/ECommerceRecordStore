@@ -1,9 +1,23 @@
+.add-product {
+    background-image: url("/assets/add_product_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .help-block {
     font-size: 12px;
     color: red;
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
-h1, h1{
+h1, h2, p {
     color: #352543;
     padding-top: 0px;
 }
@@ -17,22 +31,15 @@ h1, h1{
     position: fixed;
 }
 
-@media screen and (max-width: 1440px) { 
-  background {
-    left: 50%;
-    margin-left: -512px;   
-  }
-}
-
 .container {
     background-color: white;
-    margin-top: 68px;
-    padding: 48px;
+    margin-top: 70px;
+    padding: 40px 48px;
     border-radius: 12px;
 }
 
 
-.submit_btn {
+.submit_btn, .update_btn {
     margin-right: 16px;
     background-color:#63477C;
     color: white;
@@ -42,9 +49,6 @@ h1, h1{
     height: 40px;
 }
 
-.error-field {
-    border: 1px solid red;
-}
 
 .flex {
     display: flex;
@@ -52,10 +56,75 @@ h1, h1{
     align-items: baseline;
 }
 
+.row div button {
+    padding: 0 32px;
+    border-radius: 32px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.row div button:focus {
+    border-radius: 32px;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.row div button.primary {
+    margin-right: 16px;
+    background-color: #63477C;
+    color: white;
+    border: 1px solid #63477C;
+}
+
 button.clear-button {
     float: right;
     color: #63477C;
-    border: none;
+    border: 1px solid #63477C;
     background-color: white;
     cursor: pointer;
+}
+
+.row div label {
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+input {
+    border:none;
+    border-bottom: 1px solid #63477C;
+    border-radius: 0px;
+    
+}
+
+.row div input.error-field,
+.row div select.error-field {
+    border-bottom: 1px solid red;
+}
+
+
+.row div select {
+    border: none;
+    border-bottom: 1px solid #63477C;
+    border-radius: 0;
+}
+
+.message {
+    display: inline-block;
+    margin-left: 16px;
+}
+
+.message.error {
+    color: red;
+}
+
+input:disabled {
+    opacity: 0.1;
+}
+
+@media screen and (max-width: 1440px) { 
+    background {
+      left: 50%;
+      margin-left: -512px;   
+    }
 }
