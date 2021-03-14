@@ -2,15 +2,11 @@ export class Product {
 
     constructor(
         public id: number,
-        public productDescriptionEnglish: string,
-        public productDescriptionFrench: string,
-        public brandNameEnglish: string,
-        public brandNameFrench: string,
-        public productType: string,
-        public additionalProductIdentification: string,
-        public targetMarket: string,
-        public productImageUrl: string,
-        public status: string
+        public productImageUrl : string,
+        public recordTitle: string,
+        public artist: string, 
+        public year: string,
+        public price: string
     ) {}
 
 }
