@@ -2,6 +2,13 @@
     padding: 32px 0px;
 }
 
+input.form-control {
+    border-radius: 19px;
+    padding-left: 48px;
+    background-image: url('../../assets/icons/search.svg');
+    background-repeat: no-repeat;
+    background-position: 16px center;
+}
 
 .row div {
     display: flex;

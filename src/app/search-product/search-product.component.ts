@@ -18,8 +18,8 @@ export class SearchProductComponent implements OnInit {
   // let result: Array<string>
   products: Product[] = [];
   isDisabled: boolean;
-  @ViewChild('productIdField', {static: false}) productIdField:ElementRef;
-  @ViewChild('productDescField', {static: false}) productDescField:ElementRef;
+  // @ViewChild('productIdField', {static: false}) productIdField:ElementRef;
+  @ViewChild('searchField', {static: false}) searchField:ElementRef;
 
   constructor(private productService:ProductService) { }
 
@@ -33,60 +33,23 @@ export class SearchProductComponent implements OnInit {
 
   search() {
     this.isDisabled = true; 
-    console.log(this.isValidField(this.productId));
-    console.log(this.isValidField(this.productDescriptionEnglish)); 
-    
-    if (this.isValidField(this.productId) && !this.isValidField(this.productDescriptionEnglish)) {
-      console.log('id only');
-      this.productService.getProductById(this.productIdField.nativeElement.value).subscribe((data:Product) => {
-        console.log(data);
-        this.products = [];
-        this.products.push(data);
-        this.isDisabled = false; 
-      }, (err:any) => {
-        console.log(err.error.status);
-        this.isDisabled = false; 
-      });
-    }
-    else if (!this.isValidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
-      console.log('desc only');
-      this.productService.getProductByDescription(this.productDescriptionEnglish).subscribe((data:Product) => {
+
+      this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product) => {
         console.log('DATA:', data);  
       });
-      this.productService.getProductByDescription(this.productDescriptionEnglish).subscribe((data:any) => {
-        console.log(data);
-        this.products = <Product[]>data;
-        this.isDisabled = false; 
-      }, (err:any) => {
-        console.log(err.error.status);
-        this.isDisabled = false; 
-      });
-    }
-    else if (this.isValidField(this.productId) && this.isValidField(this.productDescriptionEnglish)) {
-      console.log('both ok');
-      // this.productService.getProductIdDescription(this.productId, this.productDescriptionEnglish).subscribe((data:any) => {
+      // this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:any) => {
       //   console.log(data);
-      //   this.products = PRODUCTS;
+      //   this.products = <Product[]>data;
       //   this.isDisabled = false; 
       // }, (err:any) => {
       //   console.log(err.error.status);
       //   this.isDisabled = false; 
       // });
-    }
-    else {
-      this.productService.getProducts().subscribe((data:any) => {
-        console.log(data);
-        this.products = <Product[]>data;
-        this.isDisabled = false; 
-      }, (err:any) => {
-        console.log(err.error.status);
-        this.isDisabled = false; 
-      });
-    }
+    
   }
 
-  clear() {
-    this.products = null;
-  }
+  // clear() {
+  //   this.products = null;
+  // }
 
 }
