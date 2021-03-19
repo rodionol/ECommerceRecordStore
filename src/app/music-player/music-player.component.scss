@@ -10,6 +10,7 @@
     background: rgb(59,59,93);
     background: linear-gradient(167deg, rgba(59,59,93,1) 0%, rgba(16,26,39,1) 100%); 
     display: flex;
+    flex-flow: wrap;
     justify-content: space-evenly;
     padding-top: 56px;
     .vinyl-record-title-container {
@@ -28,6 +29,7 @@
             width: 250px;
             height: 250px;
             background-size: 250px 250px;
+            margin-bottom: 16px;
             &.spinning {
                 animation: 2s linear infinite spinrecord;
             }
@@ -128,4 +130,13 @@
             }
         }
     }
+}
+
+
+@media only screen and (max-width: 360px) {
+
+    .recordplayer-container ol > li .music-card {
+      min-width: 0;
+    }
+  
 }
