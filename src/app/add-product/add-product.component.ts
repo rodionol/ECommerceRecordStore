@@ -13,18 +13,18 @@ import { Product } from '../model/product';
 export class AddProductComponent implements OnInit {
   public msg: string;
   public submitted: boolean = false;
-  public product : Product = {
-    id:null,
-    productDescriptionEnglish:null,
-    productDescriptionFrench:null,
-    brandNameEnglish:null,
-    brandNameFrench:null,
-    productType:null,
-    additionalProductIdentification:null,
-    targetMarket:null,
-    productImageUrl:null,
-    status:null 
-  };
+  // public product : Product = {
+  //   id:null,
+  //   productDescriptionEnglish:null,
+  //   productDescriptionFrench:null,
+  //   brandNameEnglish:null,
+  //   brandNameFrench:null,
+  //   productType:null,
+  //   additionalProductIdentification:null,
+  //   targetMarket:null,
+  //   productImageUrl:null,
+  //   status:null 
+  // };
   public prodId: number;
   clearBtnClicked: boolean = false;
 
