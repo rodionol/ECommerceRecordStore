@@ -1,4 +1,5 @@
 <div class="container">
+
     <div class="row">
         <!-- <div>
             <label>Product ID:</label>
@@ -37,10 +38,24 @@
         </div>
     </div>
 
-    <div class="row">
+    <!-- found search results (factor out in separate component?) -->
+    <div class="row" *ngIf="foundProducts.length > 0">
+
+        <div class="col-sm record-tile" *ngFor="let prod of foundProducts">
+            <img src="{{prod.productImageUrl}}"/>
+            <h6>{{prod.recordTitle}}</h6>
+            <div>{{prod.artist}}</div>
+            <div>{{prod.year}}</div>
+            <div>{{prod.price}}</div>
+        </div>
+
+    </div>
+
+    <div class="row" *ngIf="foundProducts.length == 0">
         <tile></tile>
     </div>
     <app-paginator></app-paginator>
+
 </div>
 
 

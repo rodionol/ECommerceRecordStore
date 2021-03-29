@@ -63,27 +63,35 @@ export class ProductService {
   //   return this.httpClient.get(`${this.baseUrl+'product/productDescriptionEnglish/' + productDescriptionEnglish}`);
   // }
 
+  public search(desc: string) {
+    //create array of search workd
+    // loop through array
+    // pass each word to getProductBySearchTerm()
+  }
+
   /** GET product by description. Will 404 if id not found */
-  public getProductByDescription(desc: string): Observable<Product> {
+  public getProductBySearchTerm(desc: string): Observable<Product> {
     let foundProduct: Product;
-    // if (!desc.trim()) {
-    //   console.log('return all products');
+
+    // let descLettersArray = [];
+    // for (let d = 0; d < desc.length; d++) {
+    //   descLettersArray.push(desc.charAt(d));
     // }
-    console.log(desc, '(search term)');
-    console.log(this.allProducts);
+    // console.log('array: ', descLettersArray);
+
     this.allProducts.forEach(product => {
-      if (desc.trim() == product.productDescriptionEnglish) {
+      if (desc.trim().toLowerCase() == product.recordTitle.toLowerCase() || desc.trim() == product.artist.toLowerCase()) {
         console.log('product found:', product);
         foundProduct = product;
       }
+
     });
     const url = `${this.productsUrl}/${foundProduct.id}`;
-    console.log('URL:', url);
-    return this.httpClient.get<Product>(url);
-    // .pipe(
-    //   tap(_ => console.log(`fetched product desc=${desc}`)),
-    //   catchError(this.handleError<Product>(`getProduct desc=${desc}`))
-    // );
+    //console.log('URL:', url);
+    return this.httpClient.get<Product>(url).pipe(
+      tap(_ => console.log(`fetched product desc=${desc}`)),
+      catchError(this.handleError<Product>(`getProduct desc=${desc}`))
+    );
   }
 
   public getProductIdDescription(productId:string, productDescriptionEnglish: string) {
