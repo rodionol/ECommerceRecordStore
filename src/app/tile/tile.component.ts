@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PRODUCTS } from '../mock-products';
+import { Product} from '../model/product';
 
 @Component({
   selector: 'tile',
@@ -12,7 +13,7 @@ export class TileComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
 
 }

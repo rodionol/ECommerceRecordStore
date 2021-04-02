@@ -20,6 +20,7 @@ export class SearchProductComponent implements OnInit {
   isDisabled: boolean;
   // @ViewChild('productIdField', {static: false}) productIdField:ElementRef;
   @ViewChild('searchField', {static: false}) searchField:ElementRef;
+  foundProducts: Product[] = [];
 
   constructor(private productService:ProductService) { }
 
@@ -33,9 +34,14 @@ export class SearchProductComponent implements OnInit {
 
   search() {
     this.isDisabled = true; 
+    // this.foundProducts = []; // clear old search data
 
-      this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product) => {
-        console.log('DATA:', data);  
+      this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product) => {  
+        console.log('data:', data);
+        this.foundProducts.push(data);
+        // console.log('DATA:', data);
+        console.log(this.foundProducts);  
+        
       });
       // this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:any) => {
       //   console.log(data);
@@ -47,6 +53,7 @@ export class SearchProductComponent implements OnInit {
       // });
     
   }
+
 
   // clear() {
   //   this.products = null;
