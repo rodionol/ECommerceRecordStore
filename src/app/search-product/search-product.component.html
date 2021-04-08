@@ -1,20 +1,8 @@
 <div class="container">
 
     <div class="row">
-        <!-- <div>
-            <label>Product ID:</label>
-            <input type="text" name="productId" class="form-control"
-                [(ngModel)]="productId" #productIdField>
-        </div> -->
-        <!-- <div> -->
-            <!-- <label >Product Description:</label> -->
-            <input type="text" name="searchField" class="form-control" (keyup.enter)="search()"
+        <input type="text" name="searchField" class="form-control" (keyup)="search()"
                 placeholder="Type in an artist or a record to search" aria-label="Type in an artist or a record to search" #searchField>
-        <!-- </div> -->
-        <!-- <div>
-            <button (click)="search()" type="submit" id="submit" class="search primary" value="Search" [disabled]="isDisabled">Search</button>
-            <button (click)="clear()" class="clear secondary">Clear</button>
-        </div> -->
     </div>
 
     <div class="row">

@@ -2,7 +2,6 @@ import { Component, ElementRef, NgModule, OnInit, ViewChild } from '@angular/cor
 import { ProductService } from '../product.service';
 import { Product } from '../model/product';
 import { PRODUCTS } from '../mock-products';
-// import {MatProgressSpinnerModule} from '@angular/material';
 
 @Component({
   selector: 'app-search-product',
@@ -12,13 +11,8 @@ import { PRODUCTS } from '../mock-products';
 
 
 export class SearchProductComponent implements OnInit {
-  productId: string;
-  productDescriptionEnglish: string;
-  message: string;
-  // let result: Array<string>
   products: Product[] = [];
   isDisabled: boolean;
-  // @ViewChild('productIdField', {static: false}) productIdField:ElementRef;
   @ViewChild('searchField', {static: false}) searchField:ElementRef;
   foundProducts: Product[] = [];
 
@@ -34,29 +28,13 @@ export class SearchProductComponent implements OnInit {
 
   search() {
     this.isDisabled = true; 
-    // this.foundProducts = []; // clear old search data
 
-      this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product) => {  
+      this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product[]) => {  
         console.log('data:', data);
-        this.foundProducts.push(data);
-        // console.log('DATA:', data);
-        console.log(this.foundProducts);  
-        
+        this.foundProducts.push(data); 
+        console.log('found: ', this.foundProducts);  
       });
-      // this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:any) => {
-      //   console.log(data);
-      //   this.products = <Product[]>data;
-      //   this.isDisabled = false; 
-      // }, (err:any) => {
-      //   console.log(err.error.status);
-      //   this.isDisabled = false; 
-      // });
     
   }
-
-
-  // clear() {
-  //   this.products = null;
-  // }
 
 }

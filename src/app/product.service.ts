@@ -5,7 +5,6 @@ import { Product } from './model/product';
 import { PRODUCTS } from './mock-products';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-// import { Console } from 'console';
 
 @Injectable({
   providedIn: 'root'
@@ -20,23 +19,8 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // public getProducts() {
-  //   // return this.httpClient.get(`${this.baseUrl+'products'}`);
-  //   return PRODUCTS;
-  // }
-
   public getProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.productsUrl)
-  }
-
-  /** GET product by id. Will 404 if id not found */
-  public getProductById(id: number): Observable<Product> {
-    const url = `${this.productsUrl}/${id}`;
-    console.log(url);
-    return this.httpClient.get<Product>(url).pipe(
-      tap(_ => console.log(`fetched product id=${id}`)),
-      catchError(this.handleError<Product>(`getProduct id=${id}`))
-    );
   }
 
   /**
@@ -59,34 +43,28 @@ export class ProductService {
     };
   }
 
-  // public getProductsDescription(productDescriptionEnglish: string) {
-  //   return this.httpClient.get(`${this.baseUrl+'product/productDescriptionEnglish/' + productDescriptionEnglish}`);
-  // }
-
-  public search(desc: string) {
-    //create array of search workd
-    // loop through array
-    // pass each word to getProductBySearchTerm()
-  }
-
-  /** GET product by description. Will 404 if id not found */
+  /** GET product by search term. Will 404 if id not found */
   public getProductBySearchTerm(desc: string): Observable<Product> {
-    let foundProduct: Product;
+    // let foundProduct: Product;
+    let foundProductsByTitle: Product[];
+    let foundProductsByArtist: Product[];
 
-    // let descLettersArray = [];
-    // for (let d = 0; d < desc.length; d++) {
-    //   descLettersArray.push(desc.charAt(d));
-    // }
-    // console.log('array: ', descLettersArray);
+    // find by artist
+    this.allProducts.forEach(product => {
+      if (desc.trim() == product.artist.toLowerCase()) {
+        console.log('product found (artist):', product);
+        foundProductsByArtist.push(product);
+      }
+    });
 
     this.allProducts.forEach(product => {
       if (desc.trim().toLowerCase() == product.recordTitle.toLowerCase() || desc.trim() == product.artist.toLowerCase()) {
         console.log('product found:', product);
-        foundProduct = product;
+        foundProducts.push(product);
       }
 
     });
-    const url = `${this.productsUrl}/${foundProduct.id}`;
+    const url = `${this.productsUrl}/${foundProducts[0].id}`;
     //console.log('URL:', url);
     return this.httpClient.get<Product>(url).pipe(
       tap(_ => console.log(`fetched product desc=${desc}`)),
@@ -94,12 +72,7 @@ export class ProductService {
     );
   }
 
-  public getProductIdDescription(productId:string, productDescriptionEnglish: string) {
-    return this.httpClient.get(`${this.baseUrl+'product/'+ productId + '/productIdAndProductDescriptionEnglish/' + productDescriptionEnglish}`);
-  }
-
   create(product: Product) {
-    //http://localhost:8080/products-ut-wo-db/rest/product/create
     this.httpClient.post<Product>(`${this.baseUrl}product/create`, product).subscribe(data => {
       console.log(data);
     },
