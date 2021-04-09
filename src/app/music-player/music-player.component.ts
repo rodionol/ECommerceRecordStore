@@ -26,7 +26,10 @@ export class MusicPlayerComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  setTabindex(track:number) {
+    let allcards = this.listofrecords.nativeElement.querySelectorAll('li>.music-card');
+    allcards[track].setAttribute('tabindex', 0);
+  }
   
   getTrack(track:number) {
     return this.listofrecords.nativeElement.querySelectorAll('li>.music-card')[track];
@@ -38,6 +41,7 @@ export class MusicPlayerComponent implements OnInit {
 
   switchTrack(track:number) {
     this.activeTrack = track;
+    this.setTabindex(track);
     this.audio.nativeElement.setAttribute('src', '../../assets/audio/record' + track + '.mp3');
   }
 
