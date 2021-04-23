@@ -1,127 +1,106 @@
+
 .add-product {
-    background-image: url("/assets/add_product_bg.png");
+    background-image: url("/assets/images/add_product_bg.png");
+    border: 1px solid transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     top: 0;
     z-index: 0;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
-}
-
-.help-block {
-    font-size: 12px;
-    color: red;
-    display: inline-block;
-    margin-bottom: 8px;
-}
-
-h1, h1{
-    color: #352543;
-    padding-top: 0px;
-}
-
-.background {
-    background-image: url('/assets/add_product_bg.png');
-    min-height: 100%;
-    min-width: 1024px;
-    width: 100%;
-    height: auto;
-    position: fixed;
-}
-
-.container {
-    background-color: white;
-    margin-top: 70px;
-    padding: 40px 48px;
-    border-radius: 12px;
-}
-
-
-.submit_btn {
-    margin-right: 16px;
-    background-color:#63477C;
-    color: white;
-    border: 1px solid #63477C;
-    padding: 0 32px;
-    border-radius: 32px;
-    height: 40px;
-}
-
-.flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.row div button {
-    padding: 0 32px;
-    border-radius: 32px;
-    height: 40px;
-    cursor: pointer;
-}
-
-// .row div button:focus {
-//     border-radius: 32px;
-//     border-color: #80bdff;
-//     outline: 0;
-//     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-// }
-
-.row div button.primary {
-    margin-right: 16px;
-    background-color: #63477C;
-    color: white;
-    border: 1px solid #63477C;
-}
-
-button {
-    &.clear-button {
-        float: right;
-        color: #63477C;
-        border: none;
+    .container {
         background-color: white;
-        cursor: pointer;
-    }
+        margin-top: 70px;
+        padding: 40px 48px;
+        border-radius: 12px;
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            h1 {
+                color: #352543;
+                padding-top: 0px;
+            }
+        }
+        .row {
+            div {
+                button {
+                    padding: 0 32px;
+                    border-radius: 32px;
+                    height: 40px;
+                    cursor: pointer;
+                    &.primary {
+                        margin-right: 16px;
+                        background-color: #63477C;
+                        color: white;
+                        border: 1px solid #63477C;
+                    }
+                    &.clear-button {
+                        float: right;
+                        color: #63477C;
+                        border: none;
+                        background-color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+            div {
+                label {
+                    margin-bottom: 0;
+                    margin-top: 8px;
+                    color: #352543
+                }
+                input {
+                    border: none;
+                    border-bottom: 1px solid #63477C;
+                    border-radius: 0;
+                    box-sizing: border-box;
+                    &.error-field {
+                        border-bottom: 1px solid red;
+                    }
+                    &.file-input {
+                        display: none;
+                    }
+                }
+                &.file-upload {
+                    border: 2px dashed #852c7d;
+                    padding: 10px;
+                    margin: 20px 0;
+                    .upload-btn {
+                        width: 100%;
+                        border-radius: 4px;
+                        background-color: #f8edf9;
+                        color: #852c7d;
+                        padding: 20px;
+                        height: 100px;
+                        border: none;
+                    }
+                }
+            }
+            .message {
+                display: inline-block;
+                margin-left: 16px;
+                &.error {
+                    color: red;
+                }
+            }
+            .help-block {
+                font-size: 12px;
+                color: red;
+                display: inline-block;
+                margin-bottom: 8px;
+            }            
+        }
+    }    
 }
 
-.row div label {
-    margin-bottom: 0;
-    margin-top: 8px;
-}
-
-.row div input {
-    border: none;
-    border-bottom: 1px solid #63477C;
-    border-radius: 0;
-    box-sizing: border-box;
-}
-
-.row div input.error-field,
-.row div select.error-field {
-    border-bottom: 1px solid red;
-}
 
 
-.row div select {
-    border: none;
-    border-bottom: 1px solid #63477C;
-    border-radius: 0;
-}
-
-.message {
-    display: inline-block;
-    margin-left: 16px;
-}
-
-.message.error {
-    color: red;
-}
-
-@media screen and (max-width: 1440px) { 
-    background {
-      left: 50%;
-      margin-left: -512px;   
-    }
-}
+// @media screen and (max-width: 1440px) { 
+//     background {
+//       left: 50%;
+//       margin-left: -512px;   
+//     }
+// }
