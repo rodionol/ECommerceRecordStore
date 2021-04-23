@@ -1,6 +1,6 @@
 <ul>
-    <li *ngFor="let genre of genres">
-        <a href="#"> <!-- link should call a function to sort results-->
+    <li *ngFor="let genre of genres" (click)="filterMusic(genre.name)">
+        <a [routerLink]=""> <!-- link should call a function to sort results-->
             {{ genre.name }}
         </a>
     </li>

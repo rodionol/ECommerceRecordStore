@@ -8,6 +8,9 @@ ul {
     font-family: sans-serif;
     margin-top: 60px;
     justify-content: space-evenly;
+    @media screen and (max-width: 1140px) {
+        width: 100%;
+    }
 }
 
 ul li {
@@ -33,4 +36,5 @@ ul li a {
     padding-bottom: 4px;
     border-bottom: 4px solid #BD53C7;
 }
+
 
