@@ -28,7 +28,7 @@
         </div>
         <div class="col" style="justify-content: flex-end;">
             <form>
-                <select name="music-filter" id="music-filter">
+                <select name="music-filter" aria-label="Music filter" id="music-filter">
                     <option>New release</option>
                     <option>Recommended</option>
                     <option>Price high to low</option>
@@ -42,7 +42,7 @@
     <div class="row" *ngIf="foundProducts.length > 0">
 
         <div class="col-sm record-tile" *ngFor="let prod of foundProducts">
-            <img src="{{prod.productImageUrl}}"/>
+            <img src="{{prod.productImageUrl}}" alt="{{prod.recordTitle}} cover art" />
             <h6>{{prod.recordTitle}}</h6>
             <div>{{prod.artist}}</div>
             <div>{{prod.year}}</div>

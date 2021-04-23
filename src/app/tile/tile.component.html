@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm" *ngFor="let tile of tiles">
-            <img style="margin-bottom: 20px;" src="{{tile.productImageUrl}}"/>
+            <img src="{{tile.productImageUrl}}" alt="{{tile.recordTitle}} cover art" />
             <h6>{{tile.recordTitle}}</h6>
             <div>{{tile.artist}}</div>
             <div>{{tile.year}}</div>
