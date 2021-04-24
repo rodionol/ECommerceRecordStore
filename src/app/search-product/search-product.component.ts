@@ -21,6 +21,7 @@ export class SearchProductComponent implements OnInit {
   // @ViewChild('productIdField', {static: false}) productIdField:ElementRef;
   @ViewChild('searchField', {static: false}) searchField:ElementRef;
   foundProducts: Product[] = [];
+  foundGenres: string;
 
   constructor(private productService:ProductService) { }
 
@@ -35,13 +36,11 @@ export class SearchProductComponent implements OnInit {
   search() {
     this.isDisabled = true; 
     // this.foundProducts = []; // clear old search data
-
       this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product) => {  
         console.log('data:', data);
         this.foundProducts.push(data);
         // console.log('DATA:', data);
         console.log(this.foundProducts);  
-        
       });
       // this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:any) => {
       //   console.log(data);
@@ -51,12 +50,16 @@ export class SearchProductComponent implements OnInit {
       //   console.log(err.error.status);
       //   this.isDisabled = false; 
       // });
-    
   }
 
 
   // clear() {
   //   this.products = null;
   // }
+
+  filter(category : string){
+    this.foundGenres = category;
+    console.log(category);
+  }
 
 }

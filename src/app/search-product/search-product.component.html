@@ -17,8 +17,8 @@
         </div> -->
     </div>
 
-    <div class="row">
-        <music-category></music-category>
+    <div class="row" >
+        <music-category (filterRequest)="filter($event)"></music-category>
     </div>
    
 
@@ -40,17 +40,16 @@
 
     <!-- found search results (factor out in separate component?) -->
     <div class="row" *ngIf="foundProducts.length > 0">
-
         <div class="col-sm record-tile" *ngFor="let prod of foundProducts">
             <img src="{{prod.productImageUrl}}" alt="{{prod.recordTitle}} cover art" />
             <h6>{{prod.recordTitle}}</h6>
             <div>{{prod.artist}}</div>
             <div>{{prod.year}}</div>
             <div>{{prod.price}}</div>
+            <br style="margin-bottom: 60px;"/>
         </div>
-
     </div>
-
+    
     <div class="row" *ngIf="foundProducts.length == 0">
         <tile></tile>
     </div>
