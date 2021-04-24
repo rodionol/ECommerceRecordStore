@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../model/product';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 @Component({
   selector: 'app-add-product',
@@ -13,20 +14,11 @@ import { Product } from '../model/product';
 export class AddProductComponent implements OnInit {
   public msg: string;
   public submitted: boolean = false;
-  // public product : Product = {
-  //   id:null,
-  //   productDescriptionEnglish:null,
-  //   productDescriptionFrench:null,
-  //   brandNameEnglish:null,
-  //   brandNameFrench:null,
-  //   productType:null,
-  //   additionalProductIdentification:null,
-  //   targetMarket:null,
-  //   productImageUrl:null,
-  //   status:null 
-  // };
+  public product : Product;
   public prodId: number;
   clearBtnClicked: boolean = false;
+  fileName: string = '';
+  @ViewChild('fileUpload', {static: false}) fileUpload:ElementRef;
 
   constructor(
     private http: HttpClient,
@@ -60,5 +52,24 @@ export class AddProductComponent implements OnInit {
     }
 
   }
+
+  onFileSelected(event) {
+    console.log('onfileselected fired');
+    const file:File = event.target.files[0];
+    console.log(file);
+    console.log(this.fileUpload);
+    // if (file) {
+
+    //     this.fileName = file.name;
+
+    //     const formData = new FormData();
+
+    //     formData.append("thumbnail", file);
+
+    //     const upload$ = this.http.post("/api/thumbnail-upload", formData);
+
+    //     upload$.subscribe();
+    // }
+}
 
 }

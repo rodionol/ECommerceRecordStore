@@ -16,7 +16,7 @@ h1, h1{
     color: #34072E;
 }
 
-a, button, input, form input.form-control{
+a, button, input, form input.form-control, div.music-card{
     &:focus {
         outline: none;
         border: 0;
@@ -31,3 +31,6 @@ div {
 }
 
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
