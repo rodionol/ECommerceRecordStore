@@ -59,14 +59,20 @@ export class SearchProductComponent implements OnInit {
   // }
 
   filter(category : string){
+    console.log('category: ', category);
     this.foundProducts = []; // clear old search data
-    this.productService.getProductByGenre(category).subscribe((data:Product) => {  
-      console.log('data:', data);
-      this.foundProducts.push(data);
-      // console.log('DATA:', data);
-      console.log(this.foundProducts);  
+    // this.productService.getProductByGenre(category).subscribe((data:Product) => {  
+    //   console.log('data:', data);
+    //   this.foundProducts.push(data);
+    //   // console.log('DATA:', data);
+    //   console.log(this.foundProducts, '(foundProducts array)');  
+    // });
+    PRODUCTS.forEach(product => {
+      if (product.genre.toLowerCase() == category.toLowerCase()) {
+        console.log(product);
+        this.foundProducts.push(product);
+      }  
     });
-    console.log(category);
   }
 
 }
