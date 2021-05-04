@@ -27,6 +27,7 @@ export class SearchProductComponent implements OnInit {
 
   ngOnInit() {
     this.isDisabled = false;
+    this.foundProducts = PRODUCTS;
   }
 
   isValidField(field){
@@ -35,7 +36,7 @@ export class SearchProductComponent implements OnInit {
 
   search() {
     this.isDisabled = true; 
-    // this.foundProducts = []; // clear old search data
+    this.foundProducts = [];
       this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product) => {  
         console.log('data:', data);
         this.foundProducts.push(data);
@@ -58,7 +59,13 @@ export class SearchProductComponent implements OnInit {
   // }
 
   filter(category : string){
-    this.foundGenres = category;
+    this.foundProducts = []; // clear old search data
+    this.productService.getProductByGenre(category).subscribe((data:Product) => {  
+      console.log('data:', data);
+      this.foundProducts.push(data);
+      // console.log('DATA:', data);
+      console.log(this.foundProducts);  
+    });
     console.log(category);
   }
 

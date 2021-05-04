@@ -7,7 +7,7 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ['./music-category.component.scss']
 })
 export class MusicCategoryComponent implements OnInit {
-  genres: any[] = [
+  public genres: any[] = [
     {"name": "Rock"},
     {"name": "Jazz"},
     {"name": "Classical"},
