@@ -69,7 +69,6 @@ export class SearchProductComponent implements OnInit {
     // });
     PRODUCTS.forEach(product => {
       if (product.genre.toLowerCase() == category.toLowerCase()) {
-        console.log(product);
         this.foundProducts.push(product);
       }  
     });
