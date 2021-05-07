@@ -94,30 +94,6 @@ export class ProductService {
     );
   }
 
-  public getProductByGenre(genre: string): Observable<Product> {
-    let foundProduct: Product;
-
-    // let descLettersArray = [];
-    // for (let d = 0; d < desc.length; d++) {
-    //   descLettersArray.push(desc.charAt(d));
-    // }
-    // console.log('array: ', descLettersArray);
-
-    this.allProducts.forEach(product => {
-      if (genre.trim().toLowerCase() == product.genre.toLowerCase()) {
-        console.log('product found:', product);
-        foundProduct = product;
-      }
-
-    });
-    const url = `${this.productsUrl}/${foundProduct.id}`;
-    //console.log('URL:', url);
-    return this.httpClient.get<Product>(url).pipe(
-      tap(_ => console.log(`fetched product desc=${genre}`)),
-      catchError(this.handleError<Product>(`getProduct desc=${genre}`))
-    );
-  }
-
   public getProductIdDescription(productId:string, productDescriptionEnglish: string) {
     return this.httpClient.get(`${this.baseUrl+'product/'+ productId + '/productIdAndProductDescriptionEnglish/' + productDescriptionEnglish}`);
   }

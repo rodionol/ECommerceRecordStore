@@ -19,7 +19,7 @@ export class MusicCategoryComponent implements OnInit {
   @Output() filterRequest = new EventEmitter<String>();
 
   filterMusic(category : String) {
-     console.log("filter music");
+    console.log("filter music", category);
     this.filterRequest.emit(category);
   }
 
