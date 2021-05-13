@@ -7,10 +7,10 @@
   overflow:hidden;
 }
 
-body {
-  background-color: #352543;
-  color: #ffffff;
-}
+// body {
+//   background-color: #352543;
+//   color: #ffffff;
+// }
 
 .container-fluid {
   padding: 0px; 
@@ -22,25 +22,58 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-img {
-  margin: auto;
-  width: 100%;
+  background-image: url('/assets/images/hero.png');
+  background-size: cover;
+  background-position: center;
+  height: 313px;
   background-repeat: no-repeat;
 }
 
-.some-text {
-  position:absolute;
-  position: relative;
-  top:180px;
-  bottom:100px;
-  right:200px; 
+// img {
+//   margin: auto;
+//   width: 100%;
+//   background-repeat: no-repeat;
+// }
+
+.banner-text {
+  position: absolute;
+  right: 24px;
   color:white;
-  height: 155px;
+  // height: 155px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  h1 {
+    font-size: 2.0rem;
+  }
+  button {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 0;
+    width: 250px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    span {
+      margin: auto;
+    }
+    span.icon {
+      background-color: violet;
+      width: 40px;
+      height: 40px;
+      margin: auto 0;
+    }
+    &:hover {
+      width: 300px;
+      height: 48px;
+      background-color: violet;
+      span.icon {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
 }
 
 // hide hero image on smaller screens
