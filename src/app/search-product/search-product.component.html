@@ -1,3 +1,4 @@
+<h1 class="sr-only">Search and Sort Records</h1>
 <div class="container">
 
     <div class="row">
@@ -24,7 +25,7 @@
 
     <div class="row">
         <div class="col">
-            <p>Total results:</p>
+            <h2>Total results:</h2>
         </div>
         <div class="col" style="justify-content: flex-end;">
             <form>
@@ -42,15 +43,13 @@
     <div class="row" *ngIf="foundProducts.length > 0">
         <div class="col-sm record-tile" *ngFor="let prod of foundProducts">
             <img src="{{prod.productImageUrl}}" alt="{{prod.recordTitle}} cover art" />
-            <h6>{{prod.recordTitle}}</h6>
+            <h3>{{prod.recordTitle}}</h3>
             <div>{{prod.artist}}</div>
             <div>{{prod.year}}</div>
             <div>{{prod.price}}</div>
             <br style="margin-bottom: 60px;"/>
         </div>
     </div>
-    
-    <app-paginator></app-paginator>
 
 </div>
 
