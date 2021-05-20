@@ -68,4 +68,35 @@ export class SearchProductComponent implements OnInit {
     });
   }
 
+  sortByPrice(event) {
+    let selectedIndex = event.path[0].options.selectedIndex;
+    switch (selectedIndex) {
+      case 1:
+        this.foundProducts = PRODUCTS; // clear old search data
+        // outer pass
+        for (let i = 0; i < this.foundProducts.length; i++) {
+
+          // inner pass
+          for (let j = 0; j < this.foundProducts.length - i - 1; j++) {
+
+            // value comparison (desc)
+            if (this.foundProducts[j].price < this.foundProducts[j + 1].price) {
+              console.log('j ', this.foundProducts[j+1], ', j+1: ', this.foundProducts[j+1]);
+              // swap
+              let temp = this.foundProducts[j];
+              this.foundProducts[j] = this.foundProducts[j + 1];
+              this.foundProducts[j+1] = temp;
+            }
+
+          }
+
+        }
+        break;
+      case 2: 
+        this.foundProducts = []; // clear old search data
+        console.log('low to high');
+        break;
+    }
+  }
+
 }

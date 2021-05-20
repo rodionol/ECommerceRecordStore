@@ -27,13 +27,12 @@
         <div class="col">
             <h2>Total results:</h2>
         </div>
-        <div class="col" style="justify-content: flex-end;">
+        <div class="col sort-results">
             <form>
-                <select name="music-filter" aria-label="Music filter" id="music-filter">
-                    <option>New release</option>
-                    <option>Recommended</option>
-                    <option>Price high to low</option>
-                    <option>Price low to high</option>
+                <select (click)="sortByPrice($event)" name="music-filter" aria-label="Music filter" id="music-filter">
+                    <option value="0">None</option>
+                    <option value="1">Price high to low</option>
+                    <option value="2">Price low to high</option>
                 </select>
             </form>
         </div>
