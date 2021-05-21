@@ -86,8 +86,10 @@ export class ProductService {
       }
 
     });
+    if(foundProduct == null) {
+      return;
+    }
     const url = `${this.productsUrl}/${foundProduct.id}`;
-    //console.log('URL:', url);
     return this.httpClient.get<Product>(url).pipe(
       tap(_ => console.log(`fetched product desc=${desc}`)),
       catchError(this.handleError<Product>(`getProduct desc=${desc}`))

@@ -28,7 +28,7 @@
             <h2>Total results:</h2>
         </div>
         <div class="col" style="justify-content: flex-end;">
-            <form>
+            <form style="text-align: right;">
                 <select name="music-filter" aria-label="Music filter" id="music-filter">
                     <option>New release</option>
                     <option>Recommended</option>
@@ -41,7 +41,7 @@
 
     <!-- found search results (factor out in separate component?) -->
     <div class="row" *ngIf="foundProducts.length > 0">
-        <div class="col-sm record-tile" *ngFor="let prod of foundProducts">
+        <div class="record-tile" *ngFor="let prod of foundProducts">
             <img src="{{prod.productImageUrl}}" alt="{{prod.recordTitle}} cover art" />
             <h3>{{prod.recordTitle}}</h3>
             <div>{{prod.artist}}</div>
@@ -49,6 +49,10 @@
             <div>{{prod.price}}</div>
             <br style="margin-bottom: 60px;"/>
         </div>
+    </div>
+
+    <div class="row" *ngIf="foundProducts.length == 0">
+        <p>no result</p>
     </div>
 
 </div>

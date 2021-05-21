@@ -39,24 +39,13 @@ export class SearchProductComponent implements OnInit {
     this.foundProducts = [];
       this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product) => {  
         console.log('data:', data);
-        this.foundProducts.push(data);
+        if(data != null){
+          this.foundProducts.push(data);
+        }
         // console.log('DATA:', data);
         console.log(this.foundProducts);  
       });
-      // this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:any) => {
-      //   console.log(data);
-      //   this.products = <Product[]>data;
-      //   this.isDisabled = false; 
-      // }, (err:any) => {
-      //   console.log(err.error.status);
-      //   this.isDisabled = false; 
-      // });
   }
-
-
-  // clear() {
-  //   this.products = null;
-  // }
 
   filter(category : string){
     console.log('category: ', category);
@@ -64,8 +53,14 @@ export class SearchProductComponent implements OnInit {
     PRODUCTS.forEach(product => {
       if (product.genre.toLowerCase() == category.toLowerCase()) {
         this.foundProducts.push(product);
-      }  
+      }
+      else if (category.toLowerCase() == "all") {
+        this.foundProducts = PRODUCTS; 
+      }
     });
   }
 
+  show_all_records(){
+    this.foundProducts = PRODUCTS; 
+  }
 }

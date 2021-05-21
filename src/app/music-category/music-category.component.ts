@@ -13,7 +13,8 @@ export class MusicCategoryComponent implements OnInit {
     {"name": "Classical"},
     {"name": "House"},
     {"name": "Folk"},
-    {"name": "Hip Hop"}
+    {"name": "Hip Hop"},
+    {"name": "All"}
   ];
   
   @Output() filterRequest = new EventEmitter<String>();
