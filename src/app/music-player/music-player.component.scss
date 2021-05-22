@@ -30,9 +30,9 @@
         .vinyl-record {
             background-image: url(../../assets/images/vinyl_record.png);
             background-repeat: no-repeat;
-            width: 250px;
-            height: 250px;
-            background-size: 250px 250px;
+            width: 235px;
+            height: 235px;
+            background-size: 235px 235px;
             margin-bottom: 16px;
             &.spinning {
                 animation: 2s linear infinite spinrecord;
@@ -83,6 +83,9 @@
                 color:#fff;
                 font-size: 1.8em;
                 text-align:center;
+            }
+            &:last-child {
+                margin-bottom: 0;
             }
             .music-card {
                 background-color: #070b11;
