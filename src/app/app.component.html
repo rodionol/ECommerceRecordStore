@@ -3,9 +3,11 @@
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand vie-logo" href="#"><img class="logo" src="assets/vie-logo.png" alt="Vie Records Logo" /></a>
-        <a class="hamburger-menu" href="#">|||</a>
+        <a class="hamburger-menu" (click)="mobileMenuOpenClose()" href="#">
+          <img src="assets/icons/hamburger-menu.svg" alt="" #hammenuimg />
+        </a>
       </div>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" #mobilemenu>
         <li><a class="nav-link" href="#/home">Home</a></li>
         <li><a class="nav-link" href="#/addProduct">Trade Records</a></li>
         <li><a class="nav-link" href="#/searchProduct">Search Product</a></li>
