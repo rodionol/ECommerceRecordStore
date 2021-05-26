@@ -22,11 +22,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/assets/images/hero.png');
+  background-image: url('/assets/images/bg_lines.svg');
   background-size: cover;
   background-position: center;
   height: 313px;
   background-repeat: no-repeat;
+  img.banner-image {
+    width: 250px;
+  }
 }
 
 // img {
@@ -36,8 +39,8 @@
 // }
 
 .banner-text {
-  position: absolute;
-  right: 24px;
+  // position: absolute;
+  // right: 24px;
   color:white;
   // height: 155px;
   display: flex;
