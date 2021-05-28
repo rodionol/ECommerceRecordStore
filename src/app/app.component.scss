@@ -103,10 +103,12 @@ footer span {
                     display: block;
                     color: white;
                     text-transform: uppercase;
-                    margin-left: 24px;
+                    margin-left: 16px;
+                    margin-right: 16px;
                     font-size: 1rem;
                     font-weight: lighter;
-                    margin-top: 16px;
+                    margin-top: 48px;
+                    margin-bottom: 20px;
                 }
                 &.open {
                     display: block;
@@ -118,11 +120,13 @@ footer span {
                     li {
                         background-image: url('../assets/icons/arrow-icon.svg');
                         background-repeat: no-repeat;
-                        background-position: right 32px center;
+                        background-position: right center;
                         background-size: 20px 20px;
+                        margin: 0 16px;
                         a {
                             font-size: 1.5rem;
                             font-weight: lighter;
+                            padding: 20px 0;
                         }
                     }
                 }
