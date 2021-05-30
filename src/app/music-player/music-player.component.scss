@@ -154,6 +154,43 @@
     }
 }
 
+@media only screen and (max-width: 500px) {
+  
+    .container-fluid {
+      &.recordplayer-container {
+        padding: 0;
+        .vinyl-record-title-container {
+          width: 100%;
+          .vinyl-record {
+            margin: 0 auto 16px;
+          }
+        }
+        .play-buttons {
+            width: 100%;
+            padding: 0 20px 24px;
+            ol > li { 
+                .music-card {
+                    padding: 16px 20px;
+                    .total-track-duration {
+                        height: 18px;
+                        border: 8px;
+                        border-radius: 9px;
+                        .percent-played {
+                            height: 8px;
+                            border: 5px solid black;
+                            border-radius: 9px;
+                        }
+                    }
+                }
+                &:before {
+                    left: 16px;
+                }
+            }
+        }
+      }
+    }
+    
+  }
 
 @media only screen and (max-width: 360px) {
 
