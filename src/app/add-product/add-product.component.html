@@ -70,10 +70,10 @@
                         </div>
                         
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 cta-buttons">
                                 <button (click)="clearForm(f)" type="button" class="clear-button">Clear form</button>
                                 <button class="primary" type="submit">Submit</button>
-                                <span class="message" [ngClass]="{'error':(submitted)}" *ngIf="!clearBtnClicked">{{msg}}</span>
+                                <!-- <span class="message" [ngClass]="{'error':(submitted)}" *ngIf="!clearBtnClicked">{{msg}}</span> -->
                             </div>
                         </div>
                     </div>
