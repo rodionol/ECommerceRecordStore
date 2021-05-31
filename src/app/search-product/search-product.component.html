@@ -27,13 +27,13 @@
         <div class="col">
             <h2>Total results:</h2>
         </div>
-        <div class="col" style="justify-content: flex-end;">
-            <form style="text-align: right;">
-                <select name="music-filter" aria-label="Music filter" id="music-filter">
-                    <option>New release</option>
-                    <option>Recommended</option>
-                    <option>Price high to low</option>
-                    <option>Price low to high</option>
+
+        <div class="col sort-results">
+            <form>
+                <select (click)="sortByPrice($event)" (keyup.enter)="sortByPrice($event)" name="music-filter" aria-label="Music filter" id="music-filter">
+                    <option value="0">None</option>
+                    <option value="1">Price high to low</option>
+                    <option value="2">Price low to high</option>
                 </select>
             </form>
         </div>
@@ -46,7 +46,10 @@
             <h3>{{prod.recordTitle}}</h3>
             <div>{{prod.artist}}</div>
             <div>{{prod.year}}</div>
-            <div>{{prod.price}}</div>
+            <div>{{prod.price.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD"
+              }) }}</div>
             <br style="margin-bottom: 60px;"/>
         </div>
     </div>

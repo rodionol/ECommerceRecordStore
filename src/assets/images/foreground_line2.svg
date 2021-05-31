@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="928" height="830" viewBox="0 0 928 830">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1599" data-name="Rectangle 1599" width="928" height="830" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_22" data-name="Mask Group 22" clip-path="url(#clip-path)">
+    <g id="Group_4055" data-name="Group 4055" transform="translate(-52.571 -56.105)">
+      <line id="Line_145" data-name="Line 145" y1="839.592" x2="916.218" transform="translate(0)" fill="none" stroke="#63477c" stroke-width="2"/>
+      <line id="Line_146" data-name="Line 146" y1="839.592" x2="916.218" transform="translate(37.73 39.239)" fill="none" stroke="#63477c" stroke-width="2"/>
+      <line id="Line_147" data-name="Line 147" y1="839.592" x2="916.218" transform="translate(75.46 76.969)" fill="none" stroke="#63477c" stroke-width="2"/>
+      <line id="Line_148" data-name="Line 148" y1="839.592" x2="916.218" transform="translate(18.11 18.11)" fill="none" stroke="#63477c" stroke-width="2"/>
+      <line id="Line_149" data-name="Line 149" y1="839.592" x2="916.218" transform="translate(55.84 57.349)" fill="none" stroke="#63477c" stroke-width="2"/>
+      <line id="Line_150" data-name="Line 150" y1="839.592" x2="916.218" transform="translate(95.079 95.079)" fill="none" stroke="#63477c" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

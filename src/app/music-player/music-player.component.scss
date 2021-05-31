@@ -30,9 +30,9 @@
         .vinyl-record {
             background-image: url(../../assets/images/vinyl_record.png);
             background-repeat: no-repeat;
-            width: 250px;
-            height: 250px;
-            background-size: 250px 250px;
+            width: 235px;
+            height: 235px;
+            background-size: 235px 235px;
             margin-bottom: 16px;
             &.spinning {
                 animation: 2s linear infinite spinrecord;
@@ -83,6 +83,9 @@
                 color:#fff;
                 font-size: 1.8em;
                 text-align:center;
+            }
+            &:last-child {
+                margin-bottom: 0;
             }
             .music-card {
                 background-color: #070b11;
@@ -151,6 +154,43 @@
     }
 }
 
+@media only screen and (max-width: 500px) {
+  
+    .container-fluid {
+      &.recordplayer-container {
+        padding: 0;
+        .vinyl-record-title-container {
+          width: 100%;
+          .vinyl-record {
+            margin: 0 auto 16px;
+          }
+        }
+        .play-buttons {
+            width: 100%;
+            padding: 0 20px 24px;
+            ol > li { 
+                .music-card {
+                    padding: 16px 20px;
+                    .total-track-duration {
+                        height: 18px;
+                        border: 8px;
+                        border-radius: 9px;
+                        .percent-played {
+                            height: 8px;
+                            border: 5px solid black;
+                            border-radius: 9px;
+                        }
+                    }
+                }
+                &:before {
+                    left: 16px;
+                }
+            }
+        }
+      }
+    }
+    
+  }
 
 @media only screen and (max-width: 360px) {
 

@@ -22,11 +22,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/assets/images/hero.png');
+  background-image: url('/assets/images/bg_lines.svg');
   background-size: cover;
   background-position: center;
   height: 313px;
   background-repeat: no-repeat;
+  img.banner-image {
+    width: 250px;
+  }
 }
 
 // img {
@@ -36,8 +39,8 @@
 // }
 
 .banner-text {
-  position: absolute;
-  right: 24px;
+  // position: absolute;
+  // right: 24px;
   color:white;
   // height: 155px;
   display: flex;
@@ -63,9 +66,12 @@
       width: 40px;
       height: 40px;
       margin: auto 0;
+      background-image: url(../../assets/icons/chevron-button.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
     }
     &:hover {
-      width: 300px;
+      border-bottom: 10px;
       height: 48px;
       background-color: violet;
       span.icon {
@@ -74,13 +80,4 @@
       }
     }
   }
-}
-
-// hide hero image on smaller screens
-@media only screen and (max-width: 599px) {
-  
-  .container-fluid.banner {
-    display: none;
-  }
-  
 }
