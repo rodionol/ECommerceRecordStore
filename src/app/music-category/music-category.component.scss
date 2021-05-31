@@ -3,7 +3,7 @@ ul {
     padding: 0px;
     display: flex;
     flex-wrap: wrap;
-	width: 1140px;
+    width: 1140px;
     font-family: sans-serif;
     margin-top: 60px;
     justify-content: space-evenly;
@@ -21,11 +21,16 @@ ul li {
     height: 150px;
     margin: 4px;
     background: black;
+    outline: none;
+    transition: 0.5s ease-in-out;
 }
+
 
 ul li:hover {
     background: #34072E;
-    a {
+    a span {
+        border-bottom: 4px solid #BD53C7;
+        transition: 0.5s ease-in-out;
         text-decoration: none;
     }
 }
@@ -41,11 +46,23 @@ ul li a {
 
 ul li a span {
     display: inline-block;
-	padding:3px;
+    padding:3px;
     color: white;
     text-decoration: none;
     padding-bottom: 4px;
-    border-bottom: 4px solid #BD53C7;
+    border-bottom: 4px solid #852C7D;
 }
 
+ul li a span:hover {
+    border-bottom: 4px solid #BD53C7;
+    transition: 0.5s ease-in-out;
+  }
+
+.category-selected {
+    background: #34072E;
+    a span {
+        border-bottom: 4px solid #BD53C7;
+        text-decoration: none;
+    }
+}
 
