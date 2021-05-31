@@ -87,3 +87,16 @@
         }
     }
 }
+
+select {
+    margin-bottom: 16px;
+    font-family: "Helvetica Neue", sans-serif;
+    background-color:#852C7D;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    &:hover {
+        background-color: #BD53C7;
+    }
+}
