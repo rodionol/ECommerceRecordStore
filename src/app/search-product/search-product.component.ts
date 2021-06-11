@@ -2,6 +2,7 @@ import { Component, ElementRef, NgModule, OnInit, ViewChild } from '@angular/cor
 import { ProductService } from '../product.service';
 import { Product } from '../model/product';
 import { PRODUCTS } from '../mock-products';
+import { element } from 'protractor';
 // import {MatProgressSpinnerModule} from '@angular/material';
 
 @Component({
@@ -37,14 +38,27 @@ export class SearchProductComponent implements OnInit {
   search() {
     this.isDisabled = true; 
     this.foundProducts = [];
-      this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product) => {  
-        console.log('data:', data);
-        if(data != null){
-          this.foundProducts.push(data);
+      // this.productService.getProductBySearchTerm(this.searchField.nativeElement.value).subscribe((data:Product) => {  
+      //   console.log('data:', data);
+      //   if(data != null){
+      //     this.foundProducts.push(data);
+      //   }
+      //   // console.log('DATA:', data);
+      //   console.log(this.foundProducts);  
+      // });
+      let searchField = this.searchField.nativeElement.value;
+      
+      PRODUCTS.forEach(element => {
+        // check artists
+        if (element.artist.toLowerCase() == searchField.toLowerCase()) {
+          this.foundProducts.push(element);
         }
-        // console.log('DATA:', data);
-        console.log(this.foundProducts);  
+        // check albums
+        if (element.recordTitle.toLowerCase() == searchField.toLowerCase()) {
+          this.foundProducts.push(element);
+        }
       });
+      
   }
 
   filter(category : string){
