@@ -29,6 +29,7 @@
   background-repeat: no-repeat;
   img.banner-image {
     width: 250px;
+    margin-right: 48px;
   }
 }
 
@@ -48,9 +49,10 @@
   align-items: flex-start;
   h1 {
     font-size: 2.0rem;
+    margin-bottom: 24px;
   }
-  button {
-    background-color: purple;
+  a {
+    background-color: #852C7D;
     color: white;
     border: none;
     padding: 0;
@@ -62,7 +64,7 @@
       margin: auto;
     }
     span.icon {
-      background-color: violet;
+      background-color: #BD53C7;
       width: 40px;
       height: 40px;
       margin: auto 0;
@@ -71,9 +73,11 @@
       background-position: center center;
     }
     &:hover {
-      border-bottom: 10px;
+      border-bottom: 5px;
+      border-top: 5px;
       height: 48px;
-      background-color: violet;
+      background-color: #BD53C7;
+      text-decoration: none;
       span.icon {
         width: 48px;
         height: 48px;

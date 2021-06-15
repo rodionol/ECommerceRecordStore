@@ -8,11 +8,11 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class MusicPlayerComponent implements OnInit {
   
   featuredRecords: Array<Object> = [
-    {title: 'Freaking Out (Remix)', band: 'Icy Volcano'},
-    {title: 'I dont care (part1)', band: 'some guy'},
-    {title: 'I dont care (part2)', band: 'some guy'},
-    {title: 'Christmas songs', band: 'Various artists'},
-    {title: 'I dont care', band: 'some guy '},
+    {title: 'Let\s fall in love for the night', band: 'Finneas'},
+    {title: 'Someone you love', band: 'Lewis Capaldi'},
+    {title: 'Lovely', band: 'Billie Eilish, Khalid'},
+    {title: 'Como Los 90\'s (Bachata Version)', band: 'Kewin Cosmos'},
+    {title: 'Hang On Little Tomato', band: 'Pink Martini'},
 ];
   @ViewChild("recordplayer", {static:true}) recordplayer:ElementRef;
   @ViewChild("audio", {static: true}) audio:ElementRef;

@@ -17,6 +17,7 @@
         background-color: #080d13;
         padding: 20px 52px;
         border-right: 0.25px solid grey;
+        max-width: 340px;
         .current-record-title {
             text-align: center;
             color: #FFF;
@@ -47,7 +48,7 @@
             margin: 0;
             padding: 16px;
             text-align: left;
-            color: violet;
+            color: #BD53C7;
             text-transform: uppercase;
             font-size: 1.2rem;
             font-weight: normal;
@@ -139,7 +140,7 @@
                             border: 2px;
                             border-radius: 4px;
                             .percent-played {
-                                background-color: violet;
+                                background-color: #BD53C7;
                                 width: 0%;
                                 height: 4px;
                                 border-radius: 4px;
