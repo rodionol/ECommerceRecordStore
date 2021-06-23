@@ -40,7 +40,7 @@
     </div>
 
     <!-- found search results (factor out in separate component?) -->
-    <div class="row" *ngIf="foundProducts.length > 0">
+    <div class="record-tiles" *ngIf="foundProducts.length > 0">
         <div class="record-tile" *ngFor="let prod of foundProducts">
             <img src="{{prod.productImageUrl}}" alt="{{prod.recordTitle}} cover art" />
             <h3>{{prod.recordTitle}}</h3>
