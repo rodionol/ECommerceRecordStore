@@ -14,10 +14,11 @@
     justify-content: center;
     padding-top: 56px;
     .vinyl-record-title-container {
+        width: 50%;
         background-color: #080d13;
         padding: 20px 52px;
         border-right: 0.25px solid grey;
-        max-width: 340px;
+        // max-width: 340px;
         .current-record-title {
             text-align: center;
             color: #FFF;
@@ -34,13 +35,14 @@
             width: 235px;
             height: 235px;
             background-size: 235px 235px;
-            margin-bottom: 16px;
+            margin: 0 auto 16px;
             &.spinning {
                 animation: 2s linear infinite spinrecord;
             }
         }        
     }
     .play-buttons {
+        width: 50%;
         text-align: center;
         background-color: #080d13;
         .recordplayer-title {

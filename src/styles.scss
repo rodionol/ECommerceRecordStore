@@ -30,7 +30,15 @@ div {
     color: white;
 }
 
-
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    width: 1140px;
+    max-width: 1140px;
+    min-width: 1140px;
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
