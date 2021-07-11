@@ -8,19 +8,19 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                 <form>
+                 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                    <div id="user-data">
                         <div class="row">
                             <div class="col-lg-6">
                                 <label for="recordTitle">Title</label>
                                 <input type="text" id="recordTitle" name="recordTitle" class="form-control"  
-                                        class="form-control" required>
+                                        class="form-control" ngModel required #title="ngModel">
                                 <span class="help-block" *ngIf="false">Record Title is required</span>
                             </div>
                             <div class="col-lg-6">
                                 <label for="desiredPrice">Desired price</label>
                                 <input type="text" id="desiredPrice" name="desiredPrice" class="form-control"  
-                                        required>
+                                    ngModel required #price="ngModel">
                                 <span class="help-block" *ngIf="false">Desired price is required</span>
                             </div>
                         </div>
@@ -28,13 +28,13 @@
                             <div class="col-lg-6">
                                 <label for="artist">Artist</label>
                                 <input type="text" id="artist" name="artist" class="form-control"  
-                                        required>
+                                    ngModel required #artist="ngModel">
                                 <span class="help-block" *ngIf="false">Artist is required</span>
                             </div>
                             <div class="col-lg-6">
                                 <label for="condition">Condition</label>
                                 <input type="text" id="condition" name="condition" class="form-control"     
-                                        class="form-control" required>
+                                        class="form-control" ngModel required #condition="ngModel">
                                 <span class="help-block" *ngIf="false">Condition is required</span>
                             </div>
                         </div>
@@ -42,35 +42,35 @@
                             <div class="col-lg-6">
                                 <label for="yearReleased">Year released</label>
                                 <input type="text" id="yearReleased" name="yearReleased" 
-                                        class="form-control" required />
+                                        class="form-control" ngModel required #year="ngModel" />
                                 <span class="help-block" *ngIf="false">Year is required</span>
                             </div>
                             <div class="col-lg-6">
                                 <label for="genre">Genre</label>
                                 <input type="text" id="genre" name="genre" 
-                                        class="form-control" required />
+                                        class="form-control" ngModel required #genre="ngModel" />
                                 <span class="help-block" *ngIf="false">Genre is required</span>
                             </div>
                         </div>
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-lg-12">
                                 <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
                                 
 
                                 <div class="file-upload">
 
-                                    <!-- {{fileName || "No file uploaded yet."}} -->
+                     
                                  
                                      <button color="primary" class="upload-btn"
                                        (click)="fileUpload.click()">
-                                         <!-- <mat-icon>attach_file</mat-icon> -->
+                        
                                          Upload your image here
                                      </button>
                                  </div>
 
                             </div>
-                        </div>
+                        </div> -->
                         
                         <div class="row">
                             <div class="col-lg-12 cta-buttons">

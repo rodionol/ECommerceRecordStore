@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
-import { Product } from '../model/product';
-import { MatProgressSpinnerModule } from '@angular/material';
 
 @Component({
   selector: 'app-add-product',
@@ -14,10 +12,6 @@ import { MatProgressSpinnerModule } from '@angular/material';
 export class AddProductComponent implements OnInit {
   public msg: string;
   public submitted: boolean = false;
-  public product : Product;
-  public prodId: number;
-  clearBtnClicked: boolean = false;
-  fileName: string = '';
   @ViewChild('fileUpload', {static: false}) fileUpload:ElementRef;
 
   constructor(
@@ -32,13 +26,10 @@ export class AddProductComponent implements OnInit {
   }
 
   clearForm(myForm: NgForm) {
-    this.clearBtnClicked = true;
-    myForm.resetForm();
-    this.msg = "Form is cleared.";
+    myForm.reset();
   }
 
   onSubmit(myForm: NgForm) {
-    this.clearBtnClicked = false;
     this.submitted = true;
     if (myForm.valid) {
       if (confirm('You are about to submit this entry.\n Are you sure?')) {
