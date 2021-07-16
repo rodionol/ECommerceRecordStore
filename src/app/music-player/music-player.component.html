@@ -1,7 +1,7 @@
 <div class="container-fluid recordplayer-container">
     <div class="vinyl-record-title-container">
-        <h2 class="current-record-title">{{featuredRecords[activeTrack].title}}</h2>
-        <div class="current-record-subtitle">{{featuredRecords[activeTrack].band}}</div>
+        <h2 class="current-record-title">{{featuredRecords[activeTrack].recordTitle}}</h2>
+        <div class="current-record-subtitle">{{featuredRecords[activeTrack].artist}}</div>
         <div class="vinyl-record" #recordplayer></div>
     </div>
         
@@ -16,7 +16,7 @@
             <li>
             <div [attr.tabindex]= "activeTrack == 0 ? -1 : 0" class="music-card" [ngClass]="{'active': activeTrack == 0}" (click)="playRecord(0)" (keyup.enter)="playRecord(0)">
                 <div class="flex-row">
-                    {{featuredRecords[0].title}}    <button id="btn0" class="play" aria-label="play/pause button"></button>
+                    {{featuredRecords[0].recordTitle}}    <button id="btn0" class="play" aria-label="play/pause button"></button>
                 </div>
                 <div class="track-progress flex-row">
                     
@@ -30,7 +30,7 @@
             <li>
             <div [attr.tabindex]= "activeTrack == 1 ? -1 : 0" class="music-card" [ngClass]="{'active': activeTrack == 1}" (click)="playRecord(1)" (keyup.enter)="playRecord(1)">
                 <div class="flex-row">
-                    {{featuredRecords[1].title}}<button id="btn1" class="play" aria-label="play/pause button"></button>
+                    {{featuredRecords[1].recordTitle}}<button id="btn1" class="play" aria-label="play/pause button"></button>
                 </div>
             <div class="track-progress flex-row">
                 
@@ -44,7 +44,7 @@
             <li>
             <div [attr.tabindex]= "activeTrack == 2 ? -1 : 0" class="music-card" [ngClass]="{'active': activeTrack == 2}" (click)="playRecord(2)"  (keyup.enter)="playRecord(2)">
                 <div class="flex-row">
-                    {{featuredRecords[2].title}}<button id="btn2" class="play" aria-label="play/pause button"></button>
+                    {{featuredRecords[2].recordTitle}}<button id="btn2" class="play" aria-label="play/pause button"></button>
                 </div>
                 <div class="track-progress flex-row">
                     
@@ -58,7 +58,7 @@
             <li>
             <div [attr.tabindex]= "activeTrack == 3 ? -1 : 0" class="music-card" [ngClass]="{'active': activeTrack == 3}" (click)="playRecord(3)" (keyup.enter)="playRecord(3)">
                 <div class="flex-row">  
-                    {{featuredRecords[3].title}}<button id="btn3" class="play" aria-label="play/pause button"></button>
+                    {{featuredRecords[3].recordTitle}}<button id="btn3" class="play" aria-label="play/pause button"></button>
                 </div>
                 <div class="track-progress flex-row">
                 
@@ -72,7 +72,7 @@
             <li>
             <div [attr.tabindex]= "activeTrack == 4 ? -1 : 0" class="music-card" [ngClass]="{'active': activeTrack == 4}" (click)="playRecord(4)" (keyup.enter)="playRecord(4)">
                 <div class="flex-row">
-                    {{featuredRecords[4].title}}<button id="btn4" class="play" aria-label="play/pause button"></button>
+                    {{featuredRecords[4].recordTitle}}<button id="btn4" class="play" aria-label="play/pause button"></button>
                 </div>
                 <div class="track-progress flex-row">
                     
