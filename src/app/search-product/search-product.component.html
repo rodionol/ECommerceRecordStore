@@ -1,7 +1,7 @@
 <h1 class="sr-only">Search and Sort Records</h1>
 <div class="container">
 
-    <div class="row">
+    <div class="row search-field">
         <!-- <div>
             <label>Product ID:</label>
             <input type="text" name="productId" class="form-control"
@@ -25,7 +25,7 @@
 
     <div class="row">
         <div class="col">
-            <h2>Total results:<span>{{foundProducts.length}}</span></h2>
+            <h2>Total results: <span>{{foundProducts.length}}</span></h2>
         </div>
 
         <div class="col sort-results">
@@ -40,7 +40,7 @@
     </div>
 
     <!-- found search results (factor out in separate component?) -->
-    <div class="row" *ngIf="foundProducts.length > 0">
+    <div class="record-tiles" *ngIf="foundProducts.length > 0">
         <div class="record-tile" *ngFor="let prod of foundProducts">
             <img src="{{prod.productImageUrl}}" alt="{{prod.recordTitle}} cover art" />
             <h3>{{prod.recordTitle}}</h3>
@@ -50,7 +50,6 @@
                 style: "currency",
                 currency: "USD"
               }) }}</div>
-            <br style="margin-bottom: 60px;"/>
         </div>
     </div>
 
