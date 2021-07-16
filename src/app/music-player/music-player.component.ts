@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Product } from '../model/product';
 
 @Component({
   selector: 'app-music-player',
@@ -7,12 +8,12 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class MusicPlayerComponent implements OnInit {
   
-  featuredRecords: Array<Object> = [
-    {title: 'Let\s fall in love for the night', band: 'Finneas'},
-    {title: 'Someone you love', band: 'Lewis Capaldi'},
-    {title: 'Lovely', band: 'Billie Eilish, Khalid'},
-    {title: 'Como Los 90\'s (Bachata Version)', band: 'Kewin Cosmos'},
-    {title: 'Hang On Little Tomato', band: 'Pink Martini'},
+  featuredRecords: Array<Product> = [
+    {id: 9001, productImageUrl: '', recordTitle: 'Let\s fall in love for the night', artist: 'Finneas', year: '', price: 0.00, genre: ''},
+    {id: 9002, productImageUrl: '', recordTitle: 'Someone you love', artist: 'Lewis Capaldi', year: '', price: 0.00, genre: ''},
+    {id: 9003, productImageUrl: '', recordTitle: 'Lovely', artist: 'Billie Eilish, Khalid', year: '', price: 0.00, genre: ''},
+    {id: 9004, productImageUrl: '', recordTitle: 'Como Los 90\'s (Bachata Version)', artist: 'Kewin Cosmos', year: '', price: 0.00, genre: ''},
+    {id: 9005, productImageUrl: '', recordTitle: 'Hang On Little Tomato', artist: 'Pink Martini', year: '', price: 0.00, genre: ''}
 ];
   @ViewChild("recordplayer", {static:true}) recordplayer:ElementRef;
   @ViewChild("audio", {static: true}) audio:ElementRef;

@@ -7,7 +7,6 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { SearchProductComponent } from './search-product/search-product.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HighchartsChartComponent } from 'highcharts-angular';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +25,6 @@ import { PaginatorComponent } from './paginator/paginator.component';
     HomeComponent,
     AddProductComponent,
     SearchProductComponent,
-    HighchartsChartComponent,
     FooterComponent,
     MusicCategoryComponent,
     MusicPlayerComponent,
