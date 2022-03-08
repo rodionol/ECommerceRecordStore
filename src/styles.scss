@@ -9,11 +9,20 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
 .page-heading {
     padding: 88px 0 16px 0;
 }
 
-h1{
+h1 {
     color: #34072E;
 }
 
