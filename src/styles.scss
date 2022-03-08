@@ -1,22 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+
 body {
     margin-bottom: px;
     background-color: #101A27;
     color: #ffffff;
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .page-heading {
     padding: 88px 0 16px 0;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-h1, h1{
+h1{
     color: #34072E;
 }
 
-a, button, input, form input.form-control, div.music-card{
+a, button, input, form input.form-control, div.music-card {
     &:focus {
         outline: none;
         border: 0;
@@ -26,13 +27,6 @@ a, button, input, form input.form-control, div.music-card{
     }
 }
 
-div {
-    color: white;
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 .container {
     width: 1140px;
     max-width: 1140px;
@@ -41,4 +35,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         margin-right: 0;
         margin-left: 0;
     }
+}
+
+@media screen and (max-width: 1140px) {
+
+    .container {
+        min-width: unset;
+    }
+
 }
