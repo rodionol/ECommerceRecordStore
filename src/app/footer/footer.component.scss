@@ -25,3 +25,15 @@ svg {
   margin-right: 20px;
   width: 32px;
 }
+
+#social-icons {
+  a {
+    margin-right: 16px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    svg {
+      margin: 0;
+    }
+  }
+}
