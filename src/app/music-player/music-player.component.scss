@@ -157,48 +157,78 @@
     }
 }
 
-@media only screen and (max-width: 500px) {
+
+@media screen and (max-width: 1024px) {
   
-    .container-fluid {
-      &.recordplayer-container {
-        padding: 0;
-        .vinyl-record-title-container {
-          width: 100%;
-          .vinyl-record {
-            margin: 0 auto 16px;
-          }
-        }
-        .play-buttons {
-            width: 100%;
-            padding: 0 20px 24px;
-            ol > li { 
-                .music-card {
-                    padding: 16px 20px;
-                    .total-track-duration {
-                        height: 18px;
-                        border: 8px;
-                        border-radius: 9px;
-                        .percent-played {
-                            height: 8px;
-                            border: 5px solid black;
-                            border-radius: 9px;
-                        }
-                    }
-                }
-                &:before {
-                    left: 16px;
-                }
-            }
-        }
-      }
-    }
-    
-  }
-
-@media only screen and (max-width: 360px) {
-
     .recordplayer-container ol > li .music-card {
       min-width: 0;
     }
-  
+    
 }
+
+@media only screen and (max-width: 650px) {
+    .recordplayer-container .vinyl-record-title-container {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+
+    .container-fluid.recordplayer-container {
+        flex-direction: column;
+        .vinyl-record-title-container, .play-buttons {
+            width: 100%;
+            border: 0;
+            .current-record-subtitle {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+}
+
+// @media only screen and (max-width: 500px) {
+  
+//     .container-fluid {
+//       &.recordplayer-container {
+//         padding: 0;
+//         .vinyl-record-title-container {
+//           width: 100%;
+//           .vinyl-record {
+//             margin: 0 auto 16px;
+//           }
+//         }
+//         .play-buttons {
+//             width: 100%;
+//             padding: 0 20px 24px;
+//             ol > li { 
+//                 .music-card {
+//                     padding: 16px 20px;
+//                     .total-track-duration {
+//                         height: 18px;
+//                         border: 8px;
+//                         border-radius: 9px;
+//                         .percent-played {
+//                             height: 8px;
+//                             border: 5px solid black;
+//                             border-radius: 9px;
+//                         }
+//                     }
+//                 }
+//                 &:before {
+//                     left: 16px;
+//                 }
+//             }
+//         }
+//       }
+//     }
+    
+// }
+
+// @media only screen and (max-width: 360px) {
+
+//     .recordplayer-container ol > li .music-card {
+//       min-width: 0;
+//     }
+  
+// }
