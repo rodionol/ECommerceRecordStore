@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2050" height="830" viewBox="0 0 2050 830">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1597" data-name="Rectangle 1597" width="2050" height="830" transform="translate(-3966 724)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_20" data-name="Mask Group 20" transform="translate(3966 -724)" clip-path="url(#clip-path)">
+    <g id="hero" transform="translate(-4029.18 608.303)">
+      <g id="Group_4053" data-name="Group 4053">
+        <path id="Path_1" data-name="Path 1" d="M0,0H1920V680.82H0Z" transform="translate(63.181 139.14)" fill="none"/>
+        <g id="Group_7" data-name="Group 7" transform="translate(0 81.404)">
+          <line id="Line_1" data-name="Line 1" x1="975.874" y1="884.119" transform="translate(87.624)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_3" data-name="Line 3" x1="975.874" y1="884.119" transform="translate(52.853 36.206)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_5" data-name="Line 5" x1="975.874" y1="884.119" transform="translate(18.081 71.019)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_2" data-name="Line 2" x1="975.874" y1="884.119" transform="translate(70.934 16.71)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_4" data-name="Line 4" x1="975.874" y1="884.119" transform="translate(36.162 52.916)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_6" data-name="Line 6" x1="975.874" y1="884.119" transform="translate(0 87.73)" fill="none" stroke="#63477c" stroke-width="2"/>
+        </g>
+        <g id="Group_9" data-name="Group 9" transform="translate(134.954)">
+          <line id="Line_1-2" data-name="Line 1" y1="993.094" x2="1103.444" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_3-2" data-name="Line 3" y1="993.094" x2="1103.444" transform="translate(33.397 34.775)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_5-2" data-name="Line 5" y1="993.094" x2="1103.444" transform="translate(66.794 68.212)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_2-2" data-name="Line 2" y1="993.094" x2="1103.444" transform="translate(16.031 16.05)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_4-2" data-name="Line 4" y1="993.094" x2="1103.444" transform="translate(49.428 50.825)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_6-2" data-name="Line 6" y1="993.094" x2="1103.444" transform="translate(84.161 84.262)" fill="none" stroke="#63477c" stroke-width="2"/>
+        </g>
+        <g id="Group_5" data-name="Group 5" transform="translate(1483.23 331.506)">
+          <line id="Line_1-3" data-name="Line 1" y1="631.169" x2="631.845" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_3-3" data-name="Line 3" y1="631.169" x2="631.845" transform="translate(35.9 37.381)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_5-3" data-name="Line 5" y1="631.169" x2="631.845" transform="translate(71.801 73.325)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_2-3" data-name="Line 2" y1="631.169" x2="631.845" transform="translate(17.232 17.253)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_4-3" data-name="Line 4" y1="631.169" x2="631.845" transform="translate(53.132 54.634)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_6-3" data-name="Line 6" y1="631.169" x2="631.845" transform="translate(90.469 90.578)" fill="none" stroke="#63477c" stroke-width="2"/>
+        </g>
+        <g id="Group_6" data-name="Group 6" transform="translate(1525.205 19.837)">
+          <line id="Line_1-4" data-name="Line 1" x1="594.823" y1="578.708" transform="translate(85.514)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_3-4" data-name="Line 3" x1="594.823" y1="578.708" transform="translate(51.58 35.334)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_5-4" data-name="Line 5" x1="594.823" y1="578.708" transform="translate(17.646 69.309)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_2-4" data-name="Line 2" x1="594.823" y1="578.708" transform="translate(69.226 16.308)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_4-4" data-name="Line 4" x1="594.823" y1="578.708" transform="translate(35.292 51.642)" fill="none" stroke="#63477c" stroke-width="2"/>
+          <line id="Line_6-4" data-name="Line 6" x1="594.823" y1="578.708" transform="translate(0 85.617)" fill="none" stroke="#63477c" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
